@@ -1406,6 +1406,7 @@ owl:Thing rdf:type owl:Class .
 
 ###  http://www.w3.org/ns/prov#Activity
 <http://www.w3.org/ns/prov#Activity> rdf:type owl:Class ;
+                                     rdfs:subClassOf <https://w3id.org/sulo/Process> ;
                                      owl:disjointWith <http://www.w3.org/ns/prov#Entity> ;
                                      rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
                                      rdfs:label "Activity" ;
@@ -1436,6 +1437,7 @@ owl:Thing rdf:type owl:Class .
 
 ###  http://www.w3.org/ns/prov#Entity
 <http://www.w3.org/ns/prov#Entity> rdf:type owl:Class ;
+                                   rdfs:subClassOf <https://w3id.org/sulo/Object> ;
                                    owl:disjointWith <http://www.w3.org/ns/prov#InstantaneousEvent> ;
                                    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
                                    rdfs:label "Entity" ;
@@ -1449,6 +1451,7 @@ owl:Thing rdf:type owl:Class .
 
 ###  http://www.w3.org/ns/prov#InstantaneousEvent
 <http://www.w3.org/ns/prov#InstantaneousEvent> rdf:type owl:Class ;
+                                               rdfs:subClassOf <https://w3id.org/sulo/Process> ;
                                                rdfs:comment "An instantaneous event, or event for short, happens in the world and marks a change in the world, in its activities and in its entities. The term 'event' is commonly used in process algebra with a similar meaning. Events represent communications or interactions; they are assumed to be atomic and instantaneous."@en ;
                                                rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
                                                rdfs:label "InstantaneousEvent" ;
