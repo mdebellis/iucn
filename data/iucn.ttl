@@ -698,6 +698,7 @@ xsd:date rdf:type rdfs:Datatype .
                                         rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
                                         rdfs:label "alternateOf" ;
                                         rdfs:seeAlso <http://www.w3.org/ns/prov#specializationOf> ;
+                                        skos:prefLabel "alternate of"@en ;
                                         <http://www.w3.org/ns/prov#category> "expanded" ;
                                         <http://www.w3.org/ns/prov#component> "alternate" ;
                                         <http://www.w3.org/ns/prov#constraints> "http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig"^^xsd:anyURI ;
@@ -721,6 +722,7 @@ xsd:date rdf:type rdfs:Datatype .
                                                     "enThis property has multiple RDFS domains to suit multiple OWL Profiles. See <a href=\"#owl-profile\">PROV-O OWL Profile</a>." ;
                                        rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
                                        rdfs:label "atLocation" ;
+                                       skos:prefLabel "at location"@en ;
                                        <http://www.w3.org/ns/prov#category> "expanded" ;
                                        <http://www.w3.org/ns/prov#editorialNote> "The naming of prov:atLocation parallels prov:atTime, and is not named prov:hadLocation to avoid conflicting with the convention that prov:had* properties are used on prov:Influence classes."@en ,
                                                                                  "This property is not functional because the many values could be at a variety of granularies (In this building, in this room, in that chair)."@en ;
@@ -760,6 +762,7 @@ xsd:date rdf:type rdfs:Datatype .
                                              rdfs:range <http://www.w3.org/ns/prov#Entity> ;
                                              rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
                                              rdfs:label "hadPrimarySource" ;
+                                             skos:prefLabel "had primary source"@en ;
                                              <http://www.w3.org/ns/prov#category> "expanded" ;
                                              <http://www.w3.org/ns/prov#component> "derivations" ;
                                              <http://www.w3.org/ns/prov#inverse> "wasPrimarySourceOf" .
@@ -814,6 +817,7 @@ xsd:date rdf:type rdfs:Datatype .
                                              rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
                                              rdfs:label "specializationOf" ;
                                              rdfs:seeAlso <http://www.w3.org/ns/prov#alternateOf> ;
+                                             skos:prefLabel "specialization of"@en ;
                                              <http://www.w3.org/ns/prov#category> "expanded" ;
                                              <http://www.w3.org/ns/prov#component> "alternate" ;
                                              <http://www.w3.org/ns/prov#constraints> "http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig"^^xsd:anyURI ;
@@ -842,6 +846,7 @@ xsd:date rdf:type rdfs:Datatype .
                                               rdfs:comment "An prov:Agent that had some (unspecified) responsibility for the occurrence of this prov:Activity."@en ;
                                               rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
                                               rdfs:label "wasAssociatedWith" ;
+                                              skos:prefLabel "was associated with"@en ;
                                               <http://www.w3.org/ns/prov#category> "starting-point" ;
                                               <http://www.w3.org/ns/prov#component> "agents-responsibility" ;
                                               <http://www.w3.org/ns/prov#inverse> "wasAssociateFor" .
@@ -854,6 +859,7 @@ xsd:date rdf:type rdfs:Datatype .
                                            rdfs:comment "The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable."@en ;
                                            rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
                                            rdfs:label "wasDerivedFrom" ;
+                                           skos:prefLabel "was derived from"@en ;
                                            <http://www.w3.org/ns/prov#category> "starting-point" ;
                                            <http://www.w3.org/ns/prov#component> "derivations" ;
                                            <http://www.w3.org/ns/prov#definition> "A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity."@en ;
@@ -867,6 +873,7 @@ xsd:date rdf:type rdfs:Datatype .
                                        rdfs:comment "End is when an activity is deemed to have ended. An end may refer to an entity, known as trigger, that terminated the activity."@en ;
                                        rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
                                        rdfs:label "wasEndedBy" ;
+                                       skos:prefLabel "was ended by"@en ;
                                        <http://www.w3.org/ns/prov#category> "expanded" ;
                                        <http://www.w3.org/ns/prov#component> "entities-activities" ;
                                        <http://www.w3.org/ns/prov#inverse> "ended" .
@@ -878,6 +885,7 @@ xsd:date rdf:type rdfs:Datatype .
                                            rdfs:range <http://www.w3.org/ns/prov#Activity> ;
                                            rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
                                            rdfs:label "wasGeneratedBy" ;
+                                           skos:prefLabel "was generated by"@en ;
                                            <http://www.w3.org/ns/prov#category> "starting-point" ;
                                            <http://www.w3.org/ns/prov#component> "entities-activities" ;
                                            <http://www.w3.org/ns/prov#inverse> "generated" .
@@ -889,6 +897,7 @@ xsd:date rdf:type rdfs:Datatype .
                                              rdfs:range <http://www.w3.org/ns/prov#Activity> ;
                                              rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
                                              rdfs:label "wasInvalidatedBy" ;
+                                             skos:prefLabel "was invalidated by"@en ;
                                              <http://www.w3.org/ns/prov#category> "expanded" ;
                                              <http://www.w3.org/ns/prov#component> "entities-activities" ;
                                              <http://www.w3.org/ns/prov#inverse> "invalidated" .
@@ -902,6 +911,7 @@ xsd:date rdf:type rdfs:Datatype .
                                           rdfs:comment "An entity is derived from an original entity by copying, or 'quoting', some or all of it."@en ;
                                           rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
                                           rdfs:label "wasQuotedFrom" ;
+                                          skos:prefLabel "was quoted from"@en ;
                                           <http://www.w3.org/ns/prov#category> "expanded" ;
                                           <http://www.w3.org/ns/prov#component> "derivations" ;
                                           <http://www.w3.org/ns/prov#inverse> "quotedAs" .
@@ -922,6 +932,7 @@ xsd:date rdf:type rdfs:Datatype .
                                           rdfs:comment "A revision is a derivation that revises an entity into a revised version."@en ;
                                           rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
                                           rdfs:label "wasRevisionOf" ;
+                                          skos:prefLabel "was revision of"@en ;
                                           <http://www.w3.org/ns/prov#category> "expanded" ;
                                           <http://www.w3.org/ns/prov#component> "derivations" ;
                                           <http://www.w3.org/ns/prov#inverse> "hadRevision" .
@@ -942,6 +953,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                                          rdfs:comment "Start is when an activity is deemed to have started. A start may refer to an entity, known as trigger, that initiated the activity."@en ;
                                          rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
                                          rdfs:label "wasStartedBy" ;
+                                         skos:prefLabel "was started by"@en ;
                                          <http://www.w3.org/ns/prov#category> "expanded" ;
                                          <http://www.w3.org/ns/prov#component> "entities-activities" ;
                                          <http://www.w3.org/ns/prov#inverse> "started" .
@@ -1314,6 +1326,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                                    rdfs:comment "The time at which an InstantaneousEvent occurred, in the form of xsd:dateTime."@en ;
                                    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
                                    rdfs:label "atTime" ;
+                                   skos:prefLabel "at time"@en ;
                                    <http://www.w3.org/ns/prov#category> "qualified" ;
                                    <http://www.w3.org/ns/prov#component> "entities-activities" ;
                                    <http://www.w3.org/ns/prov#sharesDefinitionWith> <http://www.w3.org/ns/prov#InstantaneousEvent> ;
@@ -1330,6 +1343,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                                         rdfs:comment "The time at which an activity ended. See also prov:startedAtTime."@en ;
                                         rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
                                         rdfs:label "endedAtTime" ;
+                                        skos:prefLabel "ended at time"@en ;
                                         <http://www.w3.org/ns/prov#category> "starting-point" ;
                                         <http://www.w3.org/ns/prov#component> "entities-activities" ;
                                         <http://www.w3.org/ns/prov#editorialNote> "It is the intent that the property chain holds: (prov:qualifiedEnd o prov:atTime) rdfs:subPropertyOf prov:endedAtTime."@en ;
@@ -1343,6 +1357,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                                             rdfs:comment "The time at which an entity was completely created and is available for use."@en ;
                                             rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
                                             rdfs:label "generatedAtTime" ;
+                                            skos:prefLabel "generated at time"@en ;
                                             <http://www.w3.org/ns/prov#category> "expanded" ;
                                             <http://www.w3.org/ns/prov#component> "entities-activities" ;
                                             <http://www.w3.org/ns/prov#editorialNote> "It is the intent that the property chain holds: (prov:qualifiedGeneration o prov:atTime) rdfs:subPropertyOf prov:generatedAtTime."@en ;
@@ -1356,6 +1371,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                                               rdfs:comment "The time at which an entity was invalidated (i.e., no longer usable)."@en ;
                                               rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
                                               rdfs:label "invalidatedAtTime" ;
+                                              skos:prefLabel "invalidated at time"@en ;
                                               <http://www.w3.org/ns/prov#category> "expanded" ;
                                               <http://www.w3.org/ns/prov#component> "entities-activities" ;
                                               <http://www.w3.org/ns/prov#editorialNote> "It is the intent that the property chain holds: (prov:qualifiedInvalidation o prov:atTime) rdfs:subPropertyOf prov:invalidatedAtTime."@en ;
@@ -1369,6 +1385,7 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
                                           rdfs:comment "The time at which an activity started. See also prov:endedAtTime."@en ;
                                           rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
                                           rdfs:label "startedAtTime" ;
+                                          skos:prefLabel "started at time"@en ;
                                           <http://www.w3.org/ns/prov#category> "starting-point" ;
                                           <http://www.w3.org/ns/prov#component> "entities-activities" ;
                                           <http://www.w3.org/ns/prov#editorialNote> "It is the intent that the property chain holds: (prov:qualifiedStart o prov:atTime) rdfs:subPropertyOf prov:startedAtTime."@en ;
@@ -1455,6 +1472,7 @@ owl:Thing rdf:type owl:Class .
                                                rdfs:comment "An instantaneous event, or event for short, happens in the world and marks a change in the world, in its activities and in its entities. The term 'event' is commonly used in process algebra with a similar meaning. Events represent communications or interactions; they are assumed to be atomic and instantaneous."@en ;
                                                rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
                                                rdfs:label "InstantaneousEvent" ;
+                                               skos:prefLabel "Instantaneous Event"@en ;
                                                <http://www.w3.org/ns/prov#category> "qualified" ;
                                                <http://www.w3.org/ns/prov#component> "entities-activities" ;
                                                <http://www.w3.org/ns/prov#constraints> "http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#dfn-event"^^xsd:anyURI ;
@@ -1539,7 +1557,8 @@ owl:Thing rdf:type owl:Class .
                                    rdfs:subClassOf <https://w3id.org/sulo/Feature> ;
                                    rdfs:comment "A capability is a feature that describes what an entity is able to do, under some set of circumstances."@en ;
                                    rdfs:label "capability" ;
-                                   skos:example "the capability to fly, the capabilty to reduce the activation energy of a chemical reaction, the capability to reason"@en .
+                                   skos:example "the capability to fly, the capabilty to reduce the activation energy of a chemical reaction, the capability to reason"@en ;
+                                   skos:prefLabel "Capability"@en .
 
 
 ###  https://w3id.org/sulo/Collection
@@ -1552,7 +1571,8 @@ owl:Thing rdf:type owl:Class .
                                    owl:disjointWith <https://w3id.org/sulo/Quantity> ;
                                    rdfs:comment "A collection is an information object for which there may be zero or more items."@en ;
                                    rdfs:label "collection"@en ;
-                                   skos:example "a stamp collection, a murder of crows, the arm of a clinical trial"@en .
+                                   skos:example "a stamp collection, a murder of crows, the arm of a clinical trial"@en ;
+                                   skos:prefLabel "Collection"@en .
 
 
 ###  https://w3id.org/sulo/Duration
@@ -1568,7 +1588,8 @@ owl:Thing rdf:type owl:Class .
                                                                       ]
                                                  ] ;
                                  rdfs:comment "Duration is a temporal quantity that represents the extent or (non-negative) amount of time that elapses between two temporal points, typically the start and end of a time interval."@en ;
-                                 rdfs:label "duration"@en .
+                                 rdfs:label "duration"@en ;
+                                 skos:prefLabel "Duration"@en .
 
 
 ###  https://w3id.org/sulo/EndTime
@@ -1576,7 +1597,8 @@ owl:Thing rdf:type owl:Class .
                                 rdfs:subClassOf <https://w3id.org/sulo/TimeInstant> ;
                                 owl:disjointWith <https://w3id.org/sulo/StartTime> ;
                                 rdfs:comment "an end time is a time instant at the end of a process/time interval."@en ;
-                                rdfs:label "end time"@en .
+                                rdfs:label "end time"@en ;
+                                skos:prefLabel "End Time" .
 
 
 ###  https://w3id.org/sulo/Feature
@@ -1602,7 +1624,8 @@ owl:Thing rdf:type owl:Class .
                                                     ) ;
                                 rdfs:comment "A feature is any characteristic that stems from the intrisinc structure and/or context"@en ;
                                 rdfs:label "feature"@en ;
-                                skos:example "the capability to fly, a collection of cards, a measured height of 170cm."@en .
+                                skos:example "the capability to fly, a collection of cards, a measured height of 170cm."@en ;
+                                skos:prefLabel "Feature"@en .
 
 
 ###  https://w3id.org/sulo/InformationObject
@@ -1617,7 +1640,8 @@ owl:Thing rdf:type owl:Class .
                                                             owl:allValuesFrom rdfs:Literal
                                                           ] ;
                                           rdfs:comment "an information object is a feature that represents, is about, or encodes some information."@en ;
-                                          rdfs:label "information object"@en .
+                                          rdfs:label "information object"@en ;
+                                          skos:prefLabel "Information Object"@en .
 
 
 ###  https://w3id.org/sulo/Object
@@ -1635,7 +1659,8 @@ owl:Thing rdf:type owl:Class .
                                owl:disjointWith <https://w3id.org/sulo/Process> ;
                                rdfs:comment "An object is an entity that maintains its identity through time, and does not have processes as its parts." ;
                                rdfs:label "object"@en ;
-                               skos:example "a heart, the function to pump blood, the role of a doctor"@en .
+                               skos:example "a heart, the function to pump blood, the role of a doctor"@en ;
+                               skos:prefLabel "Object"@en .
 
 
 ###  https://w3id.org/sulo/Process
@@ -1655,7 +1680,8 @@ owl:Thing rdf:type owl:Class .
                                 rdfs:subClassOf <https://w3id.org/sulo/Feature> ;
                                 rdfs:comment "A quality is a feature that is intrinsically associated with its bearer (or its parts)."@en ,
                                              "the color of an apple, the smoothness of skin, the brightness of a star, the speed of an event"@en ;
-                                rdfs:label "quality"@en .
+                                rdfs:label "quality"@en ;
+                                skos:prefLabel "Quality"@en .
 
 
 ###  https://w3id.org/sulo/Quantity
@@ -1666,7 +1692,8 @@ owl:Thing rdf:type owl:Class .
                                                    owl:someValuesFrom <https://w3id.org/sulo/Unit>
                                                  ] ;
                                  rdfs:comment "A quantity is an information object that represents the magnitude (and unit) of an object or process."@en ;
-                                 rdfs:label "quantity"@en .
+                                 rdfs:label "quantity"@en ;
+                                 skos:prefLabel "Quantity"@en .
 
 
 ###  https://w3id.org/sulo/Role
@@ -1674,7 +1701,8 @@ owl:Thing rdf:type owl:Class .
                              rdfs:subClassOf <https://w3id.org/sulo/Feature> ;
                              rdfs:comment "A role is a feature that describes a context-dependent behaviour."@en ;
                              rdfs:label "role"@en ;
-                             skos:example "a teacher, a student, a catalyst, a substrate, a product, a patient"@en .
+                             skos:example "a teacher, a student, a catalyst, a substrate, a product, a patient"@en ;
+                             skos:prefLabel "Role"@en .
 
 
 ###  https://w3id.org/sulo/SpatialObject
@@ -1686,14 +1714,16 @@ owl:Thing rdf:type owl:Class .
                                                       ] ;
                                       rdfs:comment "A spatial object is an object that occupies space"@en ;
                                       rdfs:label "spatial object"@en ;
-                                      skos:example "a mountain, a planet, a photon, the lining of the stomach, the cavity of the stomach, the space between mars and earth"@en .
+                                      skos:example "a mountain, a planet, a photon, the lining of the stomach, the cavity of the stomach, the space between mars and earth"@en ;
+                                      skos:prefLabel "Spatial Object"@en .
 
 
 ###  https://w3id.org/sulo/StartTime
 <https://w3id.org/sulo/StartTime> rdf:type owl:Class ;
                                   rdfs:subClassOf <https://w3id.org/sulo/TimeInstant> ;
                                   rdfs:comment "a start time is a time instant at the beginning of a process/time interval."@en ;
-                                  rdfs:label "start time"@en .
+                                  rdfs:label "start time"@en ;
+                                  skos:prefLabel "Start Time"@en .
 
 
 ###  https://w3id.org/sulo/Time
@@ -1705,7 +1735,8 @@ owl:Thing rdf:type owl:Class .
                                                    <https://w3id.org/sulo/TimeInterval>
                                                  ) ;
                              rdfs:comment "time is a quantity pertaining to the duration of some interval of time or a particular instant of time (against some frame of reference)."@en ;
-                             rdfs:label "time"@en .
+                             rdfs:label "time"@en ;
+                             skos:prefLabel "Time"@en .
 
 
 ###  https://w3id.org/sulo/TimeInstant
@@ -1721,7 +1752,8 @@ owl:Thing rdf:type owl:Class .
                                                                         ]
                                                     ] ;
                                     rdfs:comment "time instant is a quantity of time a particular moment in time."@en ;
-                                    rdfs:label "time instant"@en .
+                                    rdfs:label "time instant"@en ;
+                                    skos:prefLabel "Time Instant"@en .
 
 
 ###  https://w3id.org/sulo/TimeInterval
@@ -1748,14 +1780,16 @@ owl:Thing rdf:type owl:Class .
                                                        owl:allValuesFrom xsd:float
                                                      ] ;
                                      rdfs:comment "A time interval is a quantity for a continuous and bounded extent of time, characterized by a start time and an end time."@en ;
-                                     rdfs:label "time interval" .
+                                     rdfs:label "time interval" ;
+                                     skos:prefLabel "Time Interval"@en .
 
 
 ###  https://w3id.org/sulo/Unit
 <https://w3id.org/sulo/Unit> rdf:type owl:Class ;
                              rdfs:subClassOf <https://w3id.org/sulo/Quantity> ;
                              rdfs:comment "a unit is a standardized quantity that is used as a reference for a particular quantity."@en ;
-                             rdfs:label "unit" .
+                             rdfs:label "unit" ;
+                             skos:prefLabel "Unit"@en .
 
 
 ###  https://www.michaeldebellis.com/iucn/Abyssal_Plains
