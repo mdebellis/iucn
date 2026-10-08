@@ -1,0 +1,253 @@
+# Networks of influence: additive ecosystem data for the supplied IUCN ontology.
+# Import this file into the existing AllegroGraph repository, or append its
+# contents to your existing Turtle file. It is not a replacement ontology.
+#
+# Coverage: 11 ecosystem records (including one regional coastal mosaic),
+# one local habitat class, and two annotation properties. Main-text records
+# and reference-title-only leads have explicit provenance and evidence limits.
+#
+# Classification summary:
+# Algoa marine component: M1; beaches: MT1 (MT1.3 candidate only).
+# Algoa developed land: T7.4; engineered port shorelines: MT3.1 (inferred).
+# Swartkops intertidal saltmarsh: MFT1.3 (reference 74 title).
+# German managed forest example: T2 (broad, provisional).
+# Almeria natural drylands: T5 (broad, provisional); cultivation: T7
+# (T7.1 candidate only); groundwater: SF1.2.
+# Tonle Sap: F2 (reference 27 lead; provisional).
+# Ziziphus lotus habitat 5220: local terrestrial class; T5.2 candidate only.
+#
+# No exact named-site occurrence in the supplied IUCN report was found.
+# The report supplies the type profiles; Networks supplies the place leads.
+# Candidate EFG annotations are NOT asserted classifications.
+# Existing ontology schema, instances, metadata and license are not replaced.
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix iucn: <https://www.michaeldebellis.com/iucn/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+iucn:Almeria_Dryland_Ecosystems a owl:NamedIndividual,
+        iucn:Deserts_And_Semi_Deserts_Biome,
+        iucn:Ecosystem,
+        iucn:Terrestrial_Realm ;
+    rdfs:label "Almería natural dryland ecosystems"@en ;
+    dcterms:bibliographicCitation "Rölfer et al., Networks of influence (2025), pp. 8–9 and Figure 6. IUCN Global Ecosystem Typology 2.0 (2020), T5 Deserts and semi-deserts, p. 61. Page numbers are printed page numbers."@en ;
+    dcterms:relation iucn:Almeria_Intensive_Agroecosystems ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495>,
+        <https://doi.org/10.2305/IUCN.CH.2020.13.en> ;
+    dcterms:spatial "Almería and the southeastern Spanish dryland setting"@en ;
+    skos:definition "An illustrative aggregate for the natural dryland component of the southeastern Spanish setting discussed alongside intensive agriculture."@en ;
+    skos:note "No precise EFG, plant community, precipitation value or spatial boundary is asserted. Agricultural land and aquifers have separate records."@en ;
+    iucn:has_ambient_environmental_filter iucn:Interannual_Variability_Filter ;
+    iucn:has_resource_filter iucn:Water_Filter ;
+    iucn:mapping_basis "Provisional biome-level inference from the described aridity, scarce and unpredictable rainfall and water limitation. Dryland is broader than the T5 biome; the modeled record is the semi-arid natural component, not all southeastern Spain."@en .
+
+iucn:German_Managed_Forest_Ecosystems a owl:NamedIndividual,
+        iucn:Ecosystem,
+        iucn:Temperate_Boreal_Forests_And_Woodlands_Biome,
+        iucn:Terrestrial_Realm ;
+    rdfs:label "German managed forest ecosystems"@en ;
+    dcterms:bibliographicCitation "Rölfer et al., Networks of influence (2025), p. 8 and Figure 5. IUCN Global Ecosystem Typology 2.0 (2020), T2 Temperate-boreal forests and woodlands, p. 43; T7.3 Plantations, p. 76, for the distinction. Page numbers are printed page numbers."@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495>,
+        <https://doi.org/10.2305/IUCN.CH.2020.13.en> ;
+    dcterms:spatial "Germany; biosphere reserve unnamed in the paper"@en ;
+    skos:definition "An illustrative regional record for the managed forest ecosystems discussed in the German forest case study and its unnamed biosphere-reserve example."@en ;
+    skos:note "The structural-transformation link represents the reported tree harvesting. Do not interpret this record as saying every German managed forest belongs to one EFG or that plantations are absent."@en ;
+    iucn:has_anthropogenic_filter iucn:Structural_Transformation_Filter ;
+    iucn:has_ecological_trait iucn:Autotroph_Trait,
+        iucn:Biogenic_Structure_Trait ;
+    iucn:mapping_basis "Provisional broad forest-biome placement. Tree species, canopy composition, elevation, regeneration history and site identity are unspecified. Timber harvesting alone does not establish plantation status."@en .
+
+iucn:Networks_Of_Influence_Ecosystem_Additions a owl:Ontology ;
+    dcterms:created "2026-09-19"^^xsd:date ;
+    dcterms:isPartOf <https://www.michaeldebellis.com/iucn> ;
+    dcterms:rights "Companion to Michael DeBellis's supplied independent IUCN ontology draft; retain its rights notice and third-party attribution when combining. The Networks of influence article identifies itself as CC BY 4.0. IUCN-derived classification terminology is acknowledged to Keith et al. (2020)."@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495>,
+        <https://doi.org/10.2305/IUCN.CH.2020.13.en> ;
+    dcterms:title "Ecosystem additions from Networks of influence"@en ;
+    rdfs:comment "Additive module for the supplied IUCN ontology. Load into the same repository as the existing ontology. Reuses its namespace, class hierarchy, named ecological filters and traits, and spatial annotations. No agents, capitals or governance relationships are modeled. No owl:imports is required."@en ;
+    skos:editorialNote "IUCN assignments are independent modeling judgments, not official site classifications. Broad biome assignments are used where composition, hydrology or management evidence does not justify an ecosystem functional group. candidate_functional_group links are suggestions only and do not assert rdf:type or rdfs:subClassOf. Named trait/filter links describe relevant ecological dimensions, not measured values or evidence that every typical profile feature occurs at a site."@en ;
+    skos:scopeNote "Main-text settings and identifiable ecosystem mentions in reference titles are included. Regional records represent illustrative spatial aggregates rather than surveyed or legally delimited sites. Cities, countries, institutional addresses and reference-title study regions without an identifiable ecosystem are not added as ecosystems. No exact named-site match was found in the supplied IUCN report; its functional profiles supply the classification framework."@en .
+
+iucn:Swartkops_Estuary_Intertidal_Saltmarshes a owl:NamedIndividual,
+        iucn:Brackish_Tidal_Biome,
+        iucn:Coastal_Saltmarshes_And_Reedbeds,
+        iucn:Ecosystem,
+        iucn:Marine_Freshwater_Terrestrial_Transitional_Realm ;
+    rdfs:label "Swartkops Estuary intertidal saltmarshes"@en ;
+    dcterms:bibliographicCitation "Rölfer et al., Networks of influence (2025), p. 12, reference 74 (cited in the Algoa Bay discussion on p. 7). IUCN Global Ecosystem Typology 2.0 (2020), MFT1 Brackish tidal, p. 167; MFT1.3 Coastal saltmarshes and reedbeds, p. 170. Page numbers are printed page numbers."@en ;
+    dcterms:relation iucn:Algoa_Bay_Coastal_Ecosystem_Mosaic ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495>,
+        <https://doi.org/10.2305/IUCN.CH.2020.13.en> ;
+    dcterms:spatial "Swartkops Estuary, South Africa"@en ;
+    rdfs:seeAlso <https://doi.org/10.1016/j.sajb.2016.05.003> ;
+    skos:definition "The intertidal saltmarsh ecosystems explicitly named in reference 74 of Networks of influence."@en ;
+    skos:note "Filter and trait links are qualitative expectations from MFT1.3. This does not classify the whole Swartkops Estuary as saltmarsh or assert a measured sea-level/subsidence rate."@en ;
+    iucn:has_ambient_environmental_filter iucn:Fluid_Circulation_Filter,
+        iucn:Salinity_Filter ;
+    iucn:has_ecological_trait iucn:Autotroph_Trait,
+        iucn:Salinity_Tolerance_And_Regulation_Trait ;
+    iucn:mapping_basis "Reference-title evidence identifies the ecosystem and location directly. MFT1.3 is a close habitat-description match. The referenced study itself was not available for detailed assessment."@en .
+
+iucn:Tonle_Sap_Lake_Ecosystem a owl:NamedIndividual,
+        iucn:Ecosystem,
+        iucn:Freshwater_Realm,
+        iucn:Lakes_Biome ;
+    rdfs:label "Tonle Sap lake ecosystem"@en ;
+    dcterms:bibliographicCitation "Rölfer et al., Networks of influence (2025), p. 11, reference 27. IUCN Global Ecosystem Typology 2.0 (2020), F2 Lakes, p. 110. Page numbers are printed page numbers."@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495>,
+        <https://doi.org/10.2305/IUCN.CH.2020.13.en> ;
+    dcterms:spatial "Tonle Sap"@en ;
+    skos:definition "A broad lake-ecosystem record for the Tonle Sap place name appearing in the title of reference 27."@en ;
+    skos:note "No depth-specific EFG, flooded-forest component, trophic status, seasonal extent or hydrological measurements are asserted. This record is deliberately less detailed than the main case studies."@en ;
+    iucn:mapping_basis "Reference-title lead only: the paper names the Tonle Sap initiative without describing its ecology. Identification as a lake and F2 placement are provisional geographic/modeling interpretation, not an ecological finding of the paper."@en .
+
+iucn:Ziziphus_Lotus_Habitat_5220 a owl:Class ;
+    rdfs:label "Ziziphus lotus habitat (Priority Habitat 5220)"@en ;
+    dcterms:bibliographicCitation "Networks of influence, p. 13, reference 91. Candidate functional comparison: IUCN GET 2.0, T5.2 Succulent or thorny deserts and semi-deserts, p. 63."@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495>,
+        <https://doi.org/10.2305/IUCN.CH.2020.13.en> ;
+    rdfs:seeAlso <https://doi.org/10.7818/ecos.1890> ;
+    rdfs:subClassOf iucn:Terrestrial_Realm ;
+    skos:definition "A locally represented terrestrial habitat type named in reference 91 of Networks of influence. This is a habitat class, not an individual organism or a delineated ecosystem site."@en ;
+    skos:scopeNote "5220 is the priority habitat identifier used in the reference title, not an IUCN GET code. No iucn:code or iucn:level_number is assigned to this local class. No Almería site occurrence is asserted from an unnamed habitat reference alone."@en ;
+    iucn:candidate_functional_group iucn:Succulent_Or_Thorny_Deserts_And_Semi_Deserts ;
+    iucn:mapping_basis "Reference-title evidence supplies the habitat name and non-IUCN identifier only. A thorny dryland-scrub interpretation suggests T5.2, but the supplied paper does not provide the functional evidence needed to assert that subclass relationship. Retained at terrestrial realm level pending habitat-profile review."@en .
+
+iucn:candidate_functional_group a owl:AnnotationProperty ;
+    rdfs:label "candidate ecosystem functional group"@en ;
+    skos:definition "An unasserted candidate IUCN functional group for future review; not a class-membership or subclass assertion."@en .
+
+iucn:mapping_basis a owl:AnnotationProperty ;
+    rdfs:label "mapping basis"@en ;
+    skos:definition "Explains the evidence and limits of a local IUCN classification."@en .
+
+iucn:Algoa_Bay_Beach_Ecosystems a owl:NamedIndividual,
+        iucn:Ecosystem,
+        iucn:Marine_Terrestrial_Transitional_Realm,
+        iucn:Shorelines_Biome ;
+    rdfs:label "Algoa Bay beach ecosystems"@en ;
+    dcterms:bibliographicCitation "Rölfer et al., Networks of influence (2025), p. 7. IUCN Global Ecosystem Typology 2.0 (2020), MT1 Shorelines, p. 158; candidate MT1.3 Sandy shorelines, p. 161. Page numbers are printed page numbers."@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495>,
+        <https://doi.org/10.2305/IUCN.CH.2020.13.en> ;
+    dcterms:spatial "Algoa Bay coastal area, Eastern Cape, South Africa"@en ;
+    skos:definition "The beach ecosystems mentioned as threatened by rising sea levels in the Algoa Bay case study."@en ;
+    iucn:candidate_functional_group iucn:Sandy_Shorelines ;
+    iucn:has_anthropogenic_filter iucn:Climate_Change_Filter ;
+    iucn:has_disturbance_regime_filter iucn:Storm_Regime ;
+    iucn:mapping_basis "Beach occurrence is explicit. Shorelines is the asserted biome; Sandy shorelines is a candidate because the paper does not specify substrate."@en .
+
+iucn:Algoa_Bay_Coastal_Ecosystem_Mosaic a owl:NamedIndividual,
+        iucn:Ecosystem ;
+    rdfs:label "Algoa Bay coastal ecosystem mosaic"@en ;
+    dcterms:bibliographicCitation "Rölfer et al., Networks of influence (2025), pp. 7–8 and Figure 4. IUCN Global Ecosystem Typology 2.0 (2020), realm and biome framework. Page numbers are printed page numbers."@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495>,
+        <https://doi.org/10.2305/IUCN.CH.2020.13.en> ;
+    dcterms:spatial "Algoa Bay coastal area, Eastern Cape, South Africa"@en ;
+    skos:definition "A regional aggregate of the marine, shoreline and developed terrestrial ecosystems discussed in the Algoa Bay case study. The record covers the coastal study setting, not just the waterbody."@en ;
+    skos:note "The paper reports hotter conditions, drought, flooding, changing winds, rising sea levels and storm surges. Component records are illustrative and do not exhaust the ecosystem diversity of Algoa Bay."@en ;
+    sulo:hasPart iucn:Algoa_Bay_Beach_Ecosystems,
+        iucn:Algoa_Bay_Port_Shoreline_Ecosystems,
+        iucn:Algoa_Bay_Shallow_Marine_Ecosystems,
+        iucn:Algoa_Bay_Urban_And_Industrial_Ecosystems ;
+    iucn:has_ambient_environmental_filter iucn:Temperature_Filter ;
+    iucn:has_anthropogenic_filter iucn:Climate_Change_Filter ;
+    iucn:has_disturbance_regime_filter iucn:Flood_Regime,
+        iucn:Storm_Regime ;
+    iucn:has_resource_filter iucn:Water_Filter ;
+    iucn:mapping_basis "The paper explicitly describes a diverse land–ocean setting. No single biome or functional group is assigned to the whole mosaic."@en .
+
+iucn:Algoa_Bay_Port_Shoreline_Ecosystems a owl:NamedIndividual,
+        iucn:Anthropogenic_Shorelines_Biome,
+        iucn:Artificial_Shorelines,
+        iucn:Ecosystem,
+        iucn:Marine_Terrestrial_Transitional_Realm ;
+    rdfs:label "Algoa Bay port shoreline ecosystems"@en ;
+    dcterms:bibliographicCitation "Rölfer et al., Networks of influence (2025), p. 7. IUCN Global Ecosystem Typology 2.0 (2020), MT3 Anthropogenic shorelines, p. 165; MT3.1 Artificial shorelines, p. 166. Page numbers are printed page numbers."@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495>,
+        <https://doi.org/10.2305/IUCN.CH.2020.13.en> ;
+    dcterms:spatial "Industrial ports of Algoa Bay, Eastern Cape, South Africa"@en ;
+    skos:definition "The constructed intertidal shoreline component associated with the two industrial ports mentioned in the paper."@en ;
+    skos:note "The paper does not name the ports or describe individual structures. Artificial-shoreline details are inferred from the IUCN profile."@en ;
+    iucn:has_ambient_environmental_filter iucn:Salinity_Filter,
+        iucn:Solid_Substrate_Filter ;
+    iucn:has_anthropogenic_filter iucn:Structural_Transformation_Filter ;
+    iucn:mapping_basis "Provisional functional-group inference from the explicit presence of industrial ports. Restricted to engineered shoreline surfaces; excludes adjacent natural shores, open water and upland port facilities."@en .
+
+iucn:Algoa_Bay_Shallow_Marine_Ecosystems a owl:NamedIndividual,
+        iucn:Ecosystem,
+        iucn:Marine_Realm,
+        iucn:Marine_Shelf_Biome ;
+    rdfs:label "Algoa Bay shallow marine ecosystems"@en ;
+    dcterms:bibliographicCitation "Rölfer et al., Networks of influence (2025), p. 7. IUCN Global Ecosystem Typology 2.0 (2020), M1 Marine shelf, p. 131. Page numbers are printed page numbers."@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495>,
+        <https://doi.org/10.2305/IUCN.CH.2020.13.en> ;
+    dcterms:spatial "Algoa Bay, Eastern Cape, South Africa"@en ;
+    skos:definition "The shallow coastal marine component of the Algoa Bay setting, represented at marine-shelf biome level."@en ;
+    skos:note "The salinity and circulation links are functional-profile expectations; no numerical measurements are asserted."@en ;
+    iucn:has_ambient_environmental_filter iucn:Fluid_Circulation_Filter,
+        iucn:Salinity_Filter ;
+    iucn:has_anthropogenic_filter iucn:Climate_Change_Filter ;
+    iucn:mapping_basis "Provisional biome-level inference from the bay and coastal marine setting. The paper does not provide seabed, vegetation or bathymetric detail for an EFG assignment. This record is not the entire regional mosaic."@en .
+
+iucn:Algoa_Bay_Urban_And_Industrial_Ecosystems a owl:NamedIndividual,
+        iucn:Ecosystem,
+        iucn:Intensive_Land_Use_Biome,
+        iucn:Terrestrial_Realm,
+        iucn:Urban_And_Industrial_Ecosystems ;
+    rdfs:label "Algoa Bay urban and industrial ecosystems"@en ;
+    dcterms:bibliographicCitation "Rölfer et al., Networks of influence (2025), p. 7. IUCN Global Ecosystem Typology 2.0 (2020), T7 Intensive land-use, p. 73; T7.4 Urban and industrial ecosystems, p. 77. Page numbers are printed page numbers."@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495>,
+        <https://doi.org/10.2305/IUCN.CH.2020.13.en> ;
+    dcterms:spatial "Algoa Bay coastal area, including Nelson Mandela Bay Municipality, South Africa"@en ;
+    skos:definition "The developed terrestrial ecosystem component of the coastal setting, characterized by urban development and industrial land use."@en ;
+    iucn:has_anthropogenic_filter iucn:Climate_Change_Filter,
+        iucn:Structural_Transformation_Filter ;
+    iucn:mapping_basis "The paper explicitly identifies urban development and industrial ports. T7.4 applies to developed land, not to the municipality as an administrative entity or all of its ecosystems."@en .
+
+iucn:Almeria_Groundwater_Ecosystems a owl:NamedIndividual,
+        iucn:Ecosystem,
+        iucn:Groundwater_Ecosystems,
+        iucn:Subterranean_Freshwater_Transitional_Realm,
+        iucn:Subterranean_Freshwaters_Biome ;
+    rdfs:label "Almería groundwater ecosystems"@en ;
+    dcterms:bibliographicCitation "Rölfer et al., Networks of influence (2025), pp. 8–9. IUCN Global Ecosystem Typology 2.0 (2020), SF1 Subterranean freshwaters, p. 84; SF1.2 Groundwater ecosystems, p. 86. Page numbers are printed page numbers."@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495>,
+        <https://doi.org/10.2305/IUCN.CH.2020.13.en> ;
+    dcterms:spatial "Aquifers supporting the Almería dryland agricultural setting, southeastern Spain"@en ;
+    skos:definition "The ecological systems associated with the aquifers described as the primary water source for the Almería setting."@en ;
+    skos:note "The paper reports overexploitation, seawater intrusion and contamination from fertilizer use. Names, salinity measurements and biological inventories of individual aquifers are not supplied. Marine intrusion is a pressure; it does not by itself justify reclassifying all aquifers as a subterranean tidal EFG."@en ;
+    iucn:has_ambient_environmental_filter iucn:Salinity_Filter ;
+    iucn:has_anthropogenic_filter iucn:Pollution_Filter,
+        iucn:Water_Extraction_Diversion_And_Impoundment_Filter ;
+    iucn:has_ecological_trait iucn:Energy_Source_Trait,
+        iucn:Trophic_Structure_Trait ;
+    iucn:has_resource_filter iucn:Carbon_Filter,
+        iucn:Energy_Filter,
+        iucn:Oxygen_Filter,
+        iucn:Water_Filter ;
+    iucn:mapping_basis "Aquifers are explicitly described and fall within SF1.2. Biota and trophic traits are profile-based expectations, not reported biological surveys of these aquifers."@en .
+
+iucn:Almeria_Intensive_Agroecosystems a owl:NamedIndividual,
+        iucn:Ecosystem,
+        iucn:Intensive_Land_Use_Biome,
+        iucn:Terrestrial_Realm ;
+    rdfs:label "Almería intensive agroecosystems"@en ;
+    dcterms:bibliographicCitation "Rölfer et al., Networks of influence (2025), pp. 8–9 and Figure 6; p. 13, reference 89 identifies greenhouse horticulture. IUCN Global Ecosystem Typology 2.0 (2020), T7 Intensive land-use, p. 73; candidate T7.1 Annual croplands, p. 74. Page numbers are printed page numbers."@en ;
+    dcterms:relation iucn:Almeria_Groundwater_Ecosystems ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495>,
+        <https://doi.org/10.2305/IUCN.CH.2020.13.en> ;
+    dcterms:spatial "Almería, southeastern Spain"@en ;
+    rdfs:seeAlso <https://doi.org/10.3390/ijerph16214097> ;
+    skos:definition "The intensively cultivated ecosystem component of the Almería case study, dependent on irrigation and affected by agricultural water and nutrient management."@en ;
+    skos:note "The reported aquifer contamination is attached to the groundwater record. No invented T7 greenhouse functional-group code is introduced."@en ;
+    iucn:candidate_functional_group iucn:Annual_Croplands ;
+    iucn:has_anthropogenic_filter iucn:Structural_Transformation_Filter,
+        iucn:Water_Extraction_Diversion_And_Impoundment_Filter ;
+    iucn:has_resource_filter iucn:Nutrient_Filter,
+        iucn:Water_Filter ;
+    iucn:mapping_basis "Intensive agriculture is explicit, supporting T7. Greenhouse horticulture is identified in a cited title. T7.1 is a candidate, not an assertion, because the paper does not specify crop life cycles or whether cultivation is soil-based."@en .
+
