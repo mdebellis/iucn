@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
+  <uri name="https://www.michaeldebellis.com/bro_pro" uri="bro_pro.ttl"/>
+  <uri name="https://www.michaeldebellis.com/agents_capitals_influence" uri="Agents_Capitals_Influence_V1.ttl"/>
+  <uri name="https://www.michaeldebellis.com/agents_capitals_influence/1.0.0-draft" uri="Agents_Capitals_Influence_V1.ttl"/>
+</catalog>

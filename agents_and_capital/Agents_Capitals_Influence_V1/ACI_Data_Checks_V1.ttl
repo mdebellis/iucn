@@ -1,0 +1,99 @@
+@prefix aci: <https://www.michaeldebellis.com/agents_capitals_influence/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+aci:AgencyShape a sh:NodeShape ;
+    sh:property [ sh:class aci:Study_Context ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path aci:inContextOf ],
+        [ sh:class aci:Agency_Form ;
+            sh:minCount 1 ;
+            sh:path aci:hasAgencyForm ],
+        [ sh:class aci:Actor ;
+            sh:minCount 1 ;
+            sh:path aci:agencyOf ] ;
+    sh:targetClass aci:Agency .
+
+aci:AssessmentShape a sh:NodeShape ;
+    sh:property [ sh:maxCount 1 ;
+            sh:message "Use a valid xsd:dateTime or xsd:dateTimeStamp literal with an explicit timezone."@en ;
+            sh:minCount 0 ;
+            sh:or ( [ sh:datatype xsd:dateTime ] [ sh:datatype xsd:dateTimeStamp ] ) ;
+            sh:path aci:appliesUntil ;
+            sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ],
+        [ sh:in ( aci:Reported aci:Observed aci:Hypothesized aci:Illustrative ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path aci:hasAssessmentStatus ],
+        [ sh:class aci:Evidence_Record ;
+            sh:minCount 1 ;
+            sh:path aci:basedOnEvidence ],
+        [ sh:class aci:Study_Context ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path aci:inContextOf ],
+        [ sh:class prov:Agent ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path aci:assessedBy ],
+        [ sh:class aci:Actor ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path aci:assessedActor ],
+        [ sh:maxCount 1 ;
+            sh:message "Use a valid xsd:dateTime or xsd:dateTimeStamp literal with an explicit timezone."@en ;
+            sh:minCount 0 ;
+            sh:or ( [ sh:datatype xsd:dateTime ] [ sh:datatype xsd:dateTimeStamp ] ) ;
+            sh:path aci:appliesFrom ;
+            sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ],
+        [ sh:maxCount 1 ;
+            sh:message "Use a valid xsd:dateTime or xsd:dateTimeStamp literal with an explicit timezone."@en ;
+            sh:minCount 0 ;
+            sh:or ( [ sh:datatype xsd:dateTime ] [ sh:datatype xsd:dateTimeStamp ] ) ;
+            sh:path aci:assessedAt ;
+            sh:pattern "(Z|[+-][0-9]{2}:[0-9]{2})$" ] ;
+    sh:sparql [ sh:message "appliesUntil must be later than appliesFrom; the interval is [from, until)."@en ;
+            sh:select """SELECT $this WHERE {
+  $this <https://www.michaeldebellis.com/agents_capitals_influence/appliesFrom> ?from ;
+        <https://www.michaeldebellis.com/agents_capitals_influence/appliesUntil> ?until .
+  FILTER (?from >= ?until)
+}""" ] ;
+    sh:targetClass aci:Assessment .
+
+aci:CapitalAccessAssessmentShape a sh:NodeShape ;
+    sh:property [ sh:class aci:Capital ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path aci:assessedCapital ],
+        [ sh:in ( aci:Available aci:Restricted aci:Unavailable aci:Unknown_Access ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path aci:hasAccessStatus ] ;
+    sh:targetClass aci:Capital_Access_Assessment .
+
+aci:InfluenceAssessmentShape a sh:NodeShape ;
+    sh:property [ sh:in ( aci:Enabling aci:Constraining aci:Mixed aci:Undetermined ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path aci:hasDirection ],
+        [ sh:class aci:Capital ;
+            sh:minCount 0 ;
+            sh:path aci:assessedCapital ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:or ( [ sh:class aci:Actor ] [ sh:class aci:Governance_Process ] [ sh:class aci:Governance_Step ] ) ;
+            sh:path aci:influenceTarget ],
+        [ sh:class aci:Agency_Form ;
+            sh:minCount 1 ;
+            sh:path aci:hasAgencyForm ] ;
+    sh:targetClass aci:Influence_Assessment .
+
+<https://www.michaeldebellis.com/agents_capitals_influence/shapes/1> a owl:Ontology ;
+    rdfs:label "ACI draft data-entry checks"@en ;
+    rdfs:comment "Companion SHACL profile, not imported by the domain ontology. Use schema-aware validation with RDFS inference. Limits are application choices, not claims made by the paper."@en .
+

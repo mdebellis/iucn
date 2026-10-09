@@ -1,0 +1,311 @@
+@prefix aci: <https://www.michaeldebellis.com/agents_capitals_influence/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ex: <https://example.org/aci-wetland/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pplan: <http://purl.org/net/p-plan#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/aci-wetland> a owl:Ontology ;
+    rdfs:label "Fictional wetland restoration example"@en ;
+    dcterms:description "Entirely synthetic demonstration. No actor, interview, date, resource, or influence statement in this file is an empirical claim. The two contrasting community assessments demonstrate differing viewpoints."@en ;
+    owl:imports <https://www.michaeldebellis.com/agents_capitals_influence> .
+
+ex:Community_Delay_Account a owl:NamedIndividual,
+        aci:Influence_Assessment ;
+    rdfs:label "Community Delay Account"@en ;
+    rdfs:comment "Fictional authority perspective: the same discussion delays coordination. A distinct assessment preserves this differing viewpoint."@en ;
+    aci:appliesFrom "2026-09-01T00:00:00+00:00"^^xsd:dateTime ;
+    aci:appliesUntil "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+    aci:assessedActor ex:Community_Network ;
+    aci:assessedAt "2026-09-20T12:00:00+00:00"^^xsd:dateTime ;
+    aci:assessedBy ex:Analyst ;
+    aci:assessedCapital ex:Community_Trust ;
+    aci:basedOnEvidence ex:Synthetic_Authority_Interview ;
+    aci:hasAgencyForm aci:Steering_Social_Ecological_Discourse ;
+    aci:hasAssessmentStatus aci:Illustrative ;
+    aci:hasDirection aci:Constraining ;
+    aci:inContextOf ex:Wetland_Context ;
+    aci:influenceTarget ex:Coordination_Activity ;
+    aci:perspectiveOf ex:Regional_Authority .
+
+ex:Community_Support_Account a owl:NamedIndividual,
+        aci:Influence_Assessment ;
+    rdfs:label "Community Support Account"@en ;
+    rdfs:comment "Fictional cooperative perspective: community discussion improves engagement."@en ;
+    aci:appliesFrom "2026-09-01T00:00:00+00:00"^^xsd:dateTime ;
+    aci:appliesUntil "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+    aci:assessedActor ex:Community_Network ;
+    aci:assessedAt "2026-09-20T12:00:00+00:00"^^xsd:dateTime ;
+    aci:assessedBy ex:Analyst ;
+    aci:assessedCapital ex:Community_Trust,
+        ex:Wetland_Knowledge_Tradition ;
+    aci:basedOnEvidence ex:Synthetic_Cooperative_Interview ;
+    aci:hasAgencyForm aci:Steering_Social_Ecological_Discourse ;
+    aci:hasAssessmentStatus aci:Illustrative ;
+    aci:hasDirection aci:Enabling ;
+    aci:inContextOf ex:Wetland_Context ;
+    aci:influenceTarget ex:Coordination_Activity ;
+    aci:perspectiveOf ex:Restoration_Cooperative .
+
+ex:Discourse_Capacity a owl:NamedIndividual,
+        aci:Agency ;
+    rdfs:label "Discourse Capacity — fictional"@en ;
+    aci:agencyOf ex:Community_Network ;
+    aci:hasAgencyForm aci:Steering_Social_Ecological_Discourse ;
+    aci:hasCapitalBasis ex:Community_Trust,
+        ex:Wetland_Knowledge_Tradition ;
+    aci:inContextOf ex:Wetland_Context .
+
+ex:Equipment_Capacity a owl:NamedIndividual,
+        aci:Agency ;
+    rdfs:label "Equipment Capacity — fictional"@en ;
+    aci:agencyOf ex:Restoration_Cooperative ;
+    aci:hasAgencyForm aci:Providing_Physical_Goods_And_Assets ;
+    aci:hasCapitalBasis ex:Survey_Equipment ;
+    aci:inContextOf ex:Wetland_Context .
+
+ex:Equipment_Link a owl:NamedIndividual,
+        aci:Influence_Assessment ;
+    rdfs:label "Equipment Link"@en ;
+    rdfs:comment "Illustrative actor-to-process link. Together with Funding_Link it creates a candidate indirect path, not proof of a causal effect."@en ;
+    aci:appliesFrom "2026-09-01T00:00:00+00:00"^^xsd:dateTime ;
+    aci:appliesUntil "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+    aci:assessedActor ex:Restoration_Cooperative ;
+    aci:assessedAt "2026-09-20T12:00:00+00:00"^^xsd:dateTime ;
+    aci:assessedBy ex:Analyst ;
+    aci:assessedCapital ex:Survey_Equipment ;
+    aci:basedOnEvidence ex:Synthetic_Workshop_Notes ;
+    aci:hasAgencyForm aci:Providing_Physical_Goods_And_Assets ;
+    aci:hasAssessmentStatus aci:Illustrative ;
+    aci:hasDirection aci:Enabling ;
+    aci:inContextOf ex:Wetland_Context ;
+    aci:influenceTarget ex:Coordination_Activity ;
+    aci:perspectiveOf ex:Restoration_Cooperative .
+
+ex:Funding_Access_After_Approval a owl:NamedIndividual,
+        aci:Capital_Access_Assessment ;
+    rdfs:label "Funding Access After Approval"@en ;
+    aci:appliesFrom "2026-09-10T00:00:00+00:00"^^xsd:dateTime ;
+    aci:appliesUntil "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+    aci:assessedActor ex:Restoration_Cooperative ;
+    aci:assessedAt "2026-09-20T12:00:00+00:00"^^xsd:dateTime ;
+    aci:assessedBy ex:Analyst ;
+    aci:assessedCapital ex:Restoration_Fund ;
+    aci:basedOnEvidence ex:Synthetic_Workshop_Notes ;
+    aci:hasAccessStatus aci:Available ;
+    aci:hasAssessmentStatus aci:Illustrative ;
+    aci:inContextOf ex:Wetland_Context .
+
+ex:Funding_Access_Before_Approval a owl:NamedIndividual,
+        aci:Capital_Access_Assessment ;
+    rdfs:label "Funding Access Before Approval"@en ;
+    aci:appliesFrom "2026-09-01T00:00:00+00:00"^^xsd:dateTime ;
+    aci:appliesUntil "2026-09-10T00:00:00+00:00"^^xsd:dateTime ;
+    aci:assessedActor ex:Restoration_Cooperative ;
+    aci:assessedAt "2026-09-20T12:00:00+00:00"^^xsd:dateTime ;
+    aci:assessedBy ex:Analyst ;
+    aci:assessedCapital ex:Restoration_Fund ;
+    aci:basedOnEvidence ex:Synthetic_Workshop_Notes ;
+    aci:hasAccessStatus aci:Restricted ;
+    aci:hasAssessmentStatus aci:Illustrative ;
+    aci:inContextOf ex:Wetland_Context .
+
+ex:Funding_Link a owl:NamedIndividual,
+        aci:Influence_Assessment ;
+    rdfs:label "Funding Link"@en ;
+    rdfs:comment "Illustrative actor-to-actor link: authority funding supports the cooperative. This is a qualified claim, not an asserted transitive influence edge."@en ;
+    aci:appliesFrom "2026-09-01T00:00:00+00:00"^^xsd:dateTime ;
+    aci:appliesUntil "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+    aci:assessedActor ex:Regional_Authority ;
+    aci:assessedAt "2026-09-20T12:00:00+00:00"^^xsd:dateTime ;
+    aci:assessedBy ex:Analyst ;
+    aci:assessedCapital ex:Restoration_Fund ;
+    aci:basedOnEvidence ex:Synthetic_Workshop_Notes ;
+    aci:describesExercise ex:Funding_Decision ;
+    aci:hasAgencyForm aci:Influencing_Financial_Flows ;
+    aci:hasAssessmentStatus aci:Illustrative ;
+    aci:hasDirection aci:Enabling ;
+    aci:inContextOf ex:Wetland_Context ;
+    aci:influenceTarget ex:Restoration_Cooperative ;
+    aci:perspectiveOf ex:Restoration_Cooperative .
+
+ex:Political_Capacity a owl:NamedIndividual,
+        aci:Agency ;
+    rdfs:label "Political Capacity — fictional"@en ;
+    aci:agencyOf ex:Regional_Authority ;
+    aci:hasAgencyForm aci:Enacting_Political_Relevance ;
+    aci:hasCapitalBasis ex:Permitting_Mandate ;
+    aci:inContextOf ex:Wetland_Context .
+
+ex:Training_Capacity a owl:NamedIndividual,
+        aci:Agency ;
+    rdfs:label "Training Capacity — fictional"@en ;
+    aci:agencyOf ex:University_Team ;
+    aci:hasAgencyForm aci:Allocating_Human_Resources ;
+    aci:hasCapitalBasis ex:Restoration_Expertise ;
+    aci:inContextOf ex:Wetland_Context .
+
+ex:Training_Plan_Hypothesis a owl:NamedIndividual,
+        aci:Influence_Assessment ;
+    rdfs:label "Training Plan Hypothesis"@en ;
+    rdfs:comment "Fictional prospective hypothesis about a planned step. No monitoring execution or successful outcome is asserted."@en ;
+    aci:appliesFrom "2026-09-01T00:00:00+00:00"^^xsd:dateTime ;
+    aci:appliesUntil "2026-10-01T00:00:00+00:00"^^xsd:dateTime ;
+    aci:assessedActor ex:University_Team ;
+    aci:assessedAt "2026-09-20T12:00:00+00:00"^^xsd:dateTime ;
+    aci:assessedBy ex:Analyst ;
+    aci:assessedCapital ex:Restoration_Expertise ;
+    aci:basedOnEvidence ex:Synthetic_Workshop_Notes ;
+    aci:hasAgencyForm aci:Allocating_Human_Resources ;
+    aci:hasAssessmentStatus aci:Hypothesized ;
+    aci:hasDirection aci:Enabling ;
+    aci:inContextOf ex:Wetland_Context ;
+    aci:influenceTarget ex:Monitor_Outcomes ;
+    aci:perspectiveOf ex:University_Team .
+
+ex:Funding_Capacity a owl:NamedIndividual,
+        aci:Agency ;
+    rdfs:label "Funding Capacity — fictional"@en ;
+    aci:agencyOf ex:Regional_Authority ;
+    aci:hasAgencyForm aci:Influencing_Financial_Flows ;
+    aci:hasCapitalBasis ex:Restoration_Fund ;
+    aci:inContextOf ex:Wetland_Context .
+
+ex:Funding_Decision a owl:NamedIndividual,
+        aci:Agency_Exercise ;
+    rdfs:label "Funding decision — fictional activity"@en ;
+    aci:appliesCapital ex:Restoration_Fund ;
+    aci:exercisesAgency ex:Funding_Capacity ;
+    aci:hasAgencyForm aci:Influencing_Financial_Flows ;
+    aci:inContextOf ex:Wetland_Context ;
+    aci:performedBy ex:Regional_Authority .
+
+ex:Monitor_Outcomes a owl:NamedIndividual,
+        aci:Governance_Step ;
+    rdfs:label "Monitor outcomes — plan step"@en ;
+    pplan:isPreceededBy ex:Coordinate_Restoration ;
+    pplan:isStepOfPlan ex:Wetland_Restoration_Plan .
+
+ex:Permitting_Mandate a owl:NamedIndividual,
+        aci:Political_Capital ;
+    rdfs:label "Permitting mandate — fictional"@en .
+
+ex:Resource_Agreement_Activity a pplan:Activity,
+        owl:NamedIndividual,
+        aci:Governance_Process ;
+    rdfs:label "Resource Agreement Activity — fictional"@en ;
+    pplan:correspondsToStep ex:Secure_Resources ;
+    aci:partOfIntervention ex:Restoration_Intervention .
+
+ex:Resource_Commitment_Record a pplan:Entity,
+        owl:NamedIndividual,
+        aci:Evidence_Record ;
+    rdfs:label "Resource commitment record — fictional"@en ;
+    pplan:correspondsToVariable ex:Resource_Commitment_Variable ;
+    prov:wasGeneratedBy ex:Resource_Agreement_Activity .
+
+ex:Synthetic_Authority_Interview a owl:NamedIndividual,
+        aci:Evidence_Record ;
+    rdfs:label "Synthetic authority interview"@en ;
+    rdfs:comment "Constructed for this example. No real interview or workshop is being reported."@en .
+
+ex:Synthetic_Cooperative_Interview a owl:NamedIndividual,
+        aci:Evidence_Record ;
+    rdfs:label "Synthetic cooperative interview"@en ;
+    rdfs:comment "Constructed for this example. No real interview or workshop is being reported."@en .
+
+ex:Coordinate_Restoration a owl:NamedIndividual,
+        aci:Governance_Step ;
+    rdfs:label "Coordinate restoration — plan step"@en ;
+    pplan:hasInputVar ex:Resource_Commitment_Variable ;
+    pplan:isPreceededBy ex:Secure_Resources ;
+    pplan:isStepOfPlan ex:Wetland_Restoration_Plan .
+
+ex:Restoration_Expertise a owl:NamedIndividual,
+        aci:Human_Capital ;
+    rdfs:label "Restoration expertise — fictional"@en .
+
+ex:Restoration_Intervention a owl:NamedIndividual,
+        aci:Sustainability_Intervention ;
+    rdfs:label "Wetland restoration intervention — fictional occurrence"@en .
+
+ex:Secure_Resources a owl:NamedIndividual,
+        aci:Governance_Step ;
+    rdfs:label "Secure resources — plan step"@en ;
+    pplan:hasOutputVar ex:Resource_Commitment_Variable ;
+    pplan:isStepOfPlan ex:Wetland_Restoration_Plan .
+
+ex:Survey_Equipment a owl:NamedIndividual,
+        aci:Physical_Capital ;
+    rdfs:label "Survey equipment — fictional"@en .
+
+ex:Wetland a owl:NamedIndividual,
+        sulo:SpatialObject,
+        aci:Natural_Capital ;
+    rdfs:label "Wetland ecosystem — fictional"@en .
+
+ex:Wetland_Knowledge_Tradition a owl:NamedIndividual,
+        aci:Cultural_Capital ;
+    rdfs:label "Local wetland knowledge tradition — fictional"@en .
+
+ex:Community_Network a owl:NamedIndividual,
+        aci:Collective_Actor ;
+    rdfs:label "Community network — fictional"@en .
+
+ex:Community_Trust a owl:NamedIndividual,
+        aci:Social_Capital ;
+    rdfs:label "Community trust relationships — fictional"@en .
+
+ex:Coordination_Activity a pplan:Activity,
+        owl:NamedIndividual,
+        aci:Governance_Process ;
+    rdfs:label "Coordination Activity — fictional"@en ;
+    pplan:correspondsToStep ex:Coordinate_Restoration ;
+    prov:used ex:Resource_Commitment_Record ;
+    aci:partOfIntervention ex:Restoration_Intervention .
+
+ex:Resource_Commitment_Variable a pplan:Variable,
+        owl:NamedIndividual,
+        sulo:InformationObject ;
+    rdfs:label "Resource commitment — plan variable"@en ;
+    pplan:isVariableOfPlan ex:Wetland_Restoration_Plan .
+
+ex:University_Team a owl:NamedIndividual,
+        aci:Organizational_Actor ;
+    rdfs:label "University team — fictional"@en .
+
+ex:Regional_Authority a owl:NamedIndividual,
+        aci:Organizational_Actor ;
+    rdfs:label "Regional authority — fictional"@en .
+
+ex:Restoration_Fund a owl:NamedIndividual,
+        aci:Financial_Capital ;
+    rdfs:label "Restoration funding pool — fictional"@en .
+
+ex:Synthetic_Workshop_Notes a owl:NamedIndividual,
+        aci:Evidence_Record ;
+    rdfs:label "Synthetic workshop notes"@en ;
+    rdfs:comment "Constructed for this example. No real interview or workshop is being reported."@en .
+
+ex:Wetland_Restoration_Plan a owl:NamedIndividual,
+        aci:Sustainability_Intervention_Plan ;
+    rdfs:label "Wetland restoration plan — fictional"@en .
+
+ex:Analyst a owl:NamedIndividual,
+        aci:Individual_Actor ;
+    rdfs:label "Research analyst — fictional"@en .
+
+ex:Restoration_Cooperative a owl:NamedIndividual,
+        aci:Organizational_Actor ;
+    rdfs:label "Restoration cooperative — fictional"@en .
+
+ex:Wetland_Context a owl:NamedIndividual,
+        aci:Study_Context ;
+    rdfs:label "Wetland intervention study context — fictional"@en ;
+    sulo:refersTo ex:Wetland,
+        ex:Wetland_Restoration_Plan ;
+    aci:hasNaturalCapitalContext ex:Wetland .
+

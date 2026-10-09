@@ -1,0 +1,23 @@
+# Displays qualified assessments, including their status and perspective.
+# The example data are fictional; Hypothesized is not an observed effect.
+PREFIX aci: <https://www.michaeldebellis.com/agents_capitals_influence/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?assessment ?actorLabel ?targetLabel ?formLabel ?directionLabel
+       ?statusLabel ?perspectiveLabel ?evidenceLabel
+WHERE {
+  ?assessment a aci:Influence_Assessment ;
+      aci:assessedActor ?actor ; aci:influenceTarget ?target ;
+      aci:hasAgencyForm ?form ; aci:hasDirection ?direction ;
+      aci:hasAssessmentStatus ?status ; aci:basedOnEvidence ?evidence .
+  ?actor rdfs:label ?actorLabel .
+  ?target rdfs:label ?targetLabel .
+  ?form rdfs:label ?formLabel .
+  ?direction rdfs:label ?directionLabel .
+  ?status rdfs:label ?statusLabel .
+  ?evidence rdfs:label ?evidenceLabel .
+  OPTIONAL {
+    ?assessment aci:perspectiveOf ?perspective .
+    ?perspective rdfs:label ?perspectiveLabel .
+  }
+}
+ORDER BY ?actorLabel ?assessment

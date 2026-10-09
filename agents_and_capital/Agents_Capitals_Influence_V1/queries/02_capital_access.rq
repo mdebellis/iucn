@@ -1,0 +1,15 @@
+# Explicit access assessments over time; absence of a row is not unavailability.
+PREFIX aci: <https://www.michaeldebellis.com/agents_capitals_influence/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?actorLabel ?capitalLabel ?accessLabel ?from ?until ?assessment
+WHERE {
+  ?assessment a aci:Capital_Access_Assessment ;
+      aci:assessedActor ?actor ; aci:assessedCapital ?capital ;
+      aci:hasAccessStatus ?status .
+  ?actor rdfs:label ?actorLabel .
+  ?capital rdfs:label ?capitalLabel .
+  ?status rdfs:label ?accessLabel .
+  OPTIONAL { ?assessment aci:appliesFrom ?from . }
+  OPTIONAL { ?assessment aci:appliesUntil ?until . }
+}
+ORDER BY ?actorLabel ?capitalLabel ?from

@@ -1,0 +1,14 @@
+# A planned step can have zero, one, or multiple execution occurrences.
+# A blank execution cell here means no matching execution is recorded.
+PREFIX aci: <https://www.michaeldebellis.com/agents_capitals_influence/>
+PREFIX pplan: <http://purl.org/net/p-plan#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?planLabel ?stepLabel ?executionLabel ?step ?execution
+WHERE {
+  ?plan a aci:Sustainability_Intervention_Plan ; rdfs:label ?planLabel .
+  ?step pplan:isStepOfPlan ?plan ; rdfs:label ?stepLabel .
+  OPTIONAL {
+    ?execution pplan:correspondsToStep ?step ; rdfs:label ?executionLabel .
+  }
+}
+ORDER BY ?stepLabel ?execution

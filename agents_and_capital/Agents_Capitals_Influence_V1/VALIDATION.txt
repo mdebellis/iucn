@@ -1,0 +1,43 @@
+VALIDATION OF AGENTS, CAPITALS, AND INFLUENCE V1
+
+Executed locally on 9 October 2026 UTC (8 October in California).
+
+PASS — Turtle syntax: foundation, domain schema, example, and SHACL profile.
+PASS — The bundled bro_pro.ttl is byte-for-byte identical to the uploaded file.
+PASS — Every P-Plan, PROV, and SULO term used by the new schema/example is
+       declared in the supplied foundation. No full PROV import was added.
+PASS — All local vocabulary references in the domain schema resolve.
+PASS — HermiT reports the supplied Bro_Pro alone consistent, with no
+       unsatisfiable named classes.
+PASS — HermiT reports the combined foundation, schema, and example consistent,
+       with no unsatisfiable named classes.
+PASS — All five example agency capacities receive the intended specialized
+       class through their agency-form values.
+PASS — An executed governance process is a SULO Process; its planned step
+       is not inferred to be a Process.
+PASS — P-Plan transitive ordering infers that Secure_Resources precedes
+       Monitor_Outcomes through the intermediate coordination step.
+PASS — The fictional example conforms to the companion SHACL profile.
+PASS — Negative checks detect a missing influence direction, a timestamp
+       without a timezone, and an assessment period with reversed bounds.
+PASS — All four SELECT queries run against the combined RDF graph:
+       01_influence_assessments.rq       5 rows
+       02_capital_access.rq              2 rows
+       03_candidate_indirect_paths.rq    1 row
+       04_plan_and_executions.rq         3 rows
+
+Serialized file triple counts:
+  base_triples: 1107
+  schema_triples: 715
+  example_triples: 262
+  shapes_triples: 151
+
+Tools: RDFLib 7.6.0; HermiT through Owlready2 0.51; pySHACL 0.40.1.
+The reasoner check merged the packaged import closure in a temporary file;
+only that temporary file omitted imports to avoid network resolution.
+The delivered ontology files retain their imports and have local catalog maps.
+
+These checks establish syntactic and logical compatibility and demonstrate
+selected intended entailments. They do not empirically validate the paper’s
+model, the fictional assessments, or any prediction. Protégé GUI loading and
+AllegroGraph execution have not been tested in this environment.

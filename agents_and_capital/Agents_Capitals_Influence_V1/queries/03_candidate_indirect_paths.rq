@@ -1,0 +1,28 @@
+# A two-link, same-context, overlapping-period candidate path.
+# This query does not infer a causal effect, transitive influence, or a combined sign.
+# Both links must have known time bounds here. Missing bounds are not imputed.
+# Illustrative is allowed ONLY so the fictional example can be inspected.
+# For an empirical analysis, remove aci:Illustrative and select source criteria.
+PREFIX aci: <https://www.michaeldebellis.com/agents_capitals_influence/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?source ?intermediary ?process ?context ?firstAssessment ?secondAssessment
+       ?firstDirection ?secondDirection ?firstStatus ?secondStatus
+WHERE {
+  VALUES ?firstStatus { aci:Observed aci:Reported aci:Illustrative }
+  VALUES ?secondStatus { aci:Observed aci:Reported aci:Illustrative }
+  ?firstAssessment a aci:Influence_Assessment ;
+      aci:assessedActor ?source ; aci:influenceTarget ?intermediary ;
+      aci:inContextOf ?context ; aci:hasDirection ?firstDirection ;
+      aci:hasAssessmentStatus ?firstStatus ;
+      aci:appliesFrom ?from1 ; aci:appliesUntil ?until1 .
+  ?intermediary a/rdfs:subClassOf* aci:Actor .
+  ?secondAssessment a aci:Influence_Assessment ;
+      aci:assessedActor ?intermediary ; aci:influenceTarget ?process ;
+      aci:inContextOf ?context ; aci:hasDirection ?secondDirection ;
+      aci:hasAssessmentStatus ?secondStatus ;
+      aci:appliesFrom ?from2 ; aci:appliesUntil ?until2 .
+  ?process a/rdfs:subClassOf* aci:Governance_Process .
+  FILTER (?firstAssessment != ?secondAssessment && ?source != ?intermediary)
+  FILTER (?from1 < ?until2 && ?from2 < ?until1)
+}
+ORDER BY ?source ?intermediary ?process

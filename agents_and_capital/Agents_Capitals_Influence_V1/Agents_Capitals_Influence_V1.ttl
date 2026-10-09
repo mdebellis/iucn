@@ -1,0 +1,737 @@
+@prefix aci: <https://www.michaeldebellis.com/agents_capitals_influence/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pplan: <http://purl.org/net/p-plan#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sulo: <https://w3id.org/sulo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+aci:Discursive_Agency a owl:Class ;
+    rdfs:label "Steering social-ecological discourse agency"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf aci:Agency ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( aci:Agency [ a owl:Restriction ;
+                        owl:hasValue aci:Steering_Social_Ecological_Discourse ;
+                        owl:onProperty aci:hasAgencyForm ] ) ] ;
+    skos:definition "An agency capacity classified by the form steering social-ecological discourse."@en ;
+    skos:prefLabel "Steering social-ecological discourse agency"@en ;
+    aci:modelingBasis "Paper agency form; OWL classification pattern is a draft extension."@en .
+
+aci:Financial_Agency a owl:Class ;
+    rdfs:label "Influencing financial flows agency"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf aci:Agency ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( aci:Agency [ a owl:Restriction ;
+                        owl:hasValue aci:Influencing_Financial_Flows ;
+                        owl:onProperty aci:hasAgencyForm ] ) ] ;
+    skos:definition "An agency capacity classified by the form influencing financial flows."@en ;
+    skos:prefLabel "Influencing financial flows agency"@en ;
+    aci:modelingBasis "Paper agency form; OWL classification pattern is a draft extension."@en .
+
+aci:Human_Resource_Allocation_Agency a owl:Class ;
+    rdfs:label "Allocating human resources agency"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf aci:Agency ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( aci:Agency [ a owl:Restriction ;
+                        owl:hasValue aci:Allocating_Human_Resources ;
+                        owl:onProperty aci:hasAgencyForm ] ) ] ;
+    skos:definition "An agency capacity classified by the form allocating human resources."@en ;
+    skos:prefLabel "Allocating human resources agency"@en ;
+    aci:modelingBasis "Paper agency form; OWL classification pattern is a draft extension."@en .
+
+aci:Individual_Actor a owl:Class ;
+    rdfs:label "Individual actor"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf prov:Person,
+        aci:Actor ;
+    skos:definition "A human individual considered as an actor in the study context."@en ;
+    skos:prefLabel "Individual actor"@en ;
+    aci:modelingBasis "Paper: individual actors, p. 5."@en .
+
+aci:Organizational_Actor a owl:Class ;
+    rdfs:label "Organizational actor"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf prov:Organization,
+        aci:Collective_Actor ;
+    skos:definition "An organization considered as an actor in the study context."@en ;
+    skos:prefLabel "Organizational actor"@en ;
+    aci:modelingBasis "Paper: primary organizational focus, p. 5."@en .
+
+aci:Physical_Resource_Provision_Agency a owl:Class ;
+    rdfs:label "Providing physical goods and assets agency"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf aci:Agency ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( aci:Agency [ a owl:Restriction ;
+                        owl:hasValue aci:Providing_Physical_Goods_And_Assets ;
+                        owl:onProperty aci:hasAgencyForm ] ) ] ;
+    skos:definition "An agency capacity classified by the form providing physical goods and assets."@en ;
+    skos:prefLabel "Providing physical goods and assets agency"@en ;
+    aci:modelingBasis "Paper agency form; OWL classification pattern is a draft extension."@en .
+
+aci:Political_Agency a owl:Class ;
+    rdfs:label "Enacting political relevance agency"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf aci:Agency ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( aci:Agency [ a owl:Restriction ;
+                        owl:hasValue aci:Enacting_Political_Relevance ;
+                        owl:onProperty aci:hasAgencyForm ] ) ] ;
+    skos:definition "An agency capacity classified by the form enacting political relevance."@en ;
+    skos:prefLabel "Enacting political relevance agency"@en ;
+    aci:modelingBasis "Paper agency form; OWL classification pattern is a draft extension."@en .
+
+aci:Sustainability_Intervention_Plan a owl:Class ;
+    rdfs:label "Sustainability intervention plan"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf pplan:Plan,
+        sulo:InformationObject ;
+    skos:definition "A plan specifying steps intended to address a sustainability challenge."@en ;
+    skos:prefLabel "Sustainability intervention plan"@en ;
+    aci:modelingBasis "Draft modeling choice."@en .
+
+aci:appliesCapital a owl:ObjectProperty ;
+    rdfs:label "applies capital"@en ;
+    rdfs:domain aci:Agency_Exercise ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:range aci:Capital ;
+    rdfs:subPropertyOf prov:used ;
+    skos:definition "Identifies a capital resource used in an agency exercise."@en ;
+    skos:prefLabel "applies capital"@en ;
+    aci:modelingBasis "Draft relation for operationalizing the paper."@en .
+
+aci:appliesFrom a owl:DatatypeProperty ;
+    rdfs:label "applies from"@en ;
+    rdfs:domain aci:Assessment ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    skos:definition "Inclusive beginning of the period to which an assessment applies."@en ;
+    skos:prefLabel "applies from"@en ;
+    skos:scopeNote "Datatype labels, timezone presence, and date ordering are checked in the companion SHACL profile. No OWL datatype range is imposed."@en ;
+    aci:modelingBasis "Draft temporal qualification."@en .
+
+aci:appliesUntil a owl:DatatypeProperty ;
+    rdfs:label "applies until"@en ;
+    rdfs:domain aci:Assessment ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    skos:definition "Exclusive end of the period to which an assessment applies, when specified."@en ;
+    skos:prefLabel "applies until"@en ;
+    skos:scopeNote "Datatype labels, timezone presence, and date ordering are checked in the companion SHACL profile. No OWL datatype range is imposed."@en ;
+    aci:modelingBasis "Draft temporal qualification."@en .
+
+aci:assessedActor a owl:ObjectProperty ;
+    rdfs:label "assessed actor"@en ;
+    rdfs:domain aci:Assessment ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:range aci:Actor ;
+    skos:definition "Identifies the actor whose influence or capital access is being assessed."@en ;
+    skos:prefLabel "assessed actor"@en ;
+    aci:modelingBasis "Draft relation for operationalizing the paper."@en .
+
+aci:assessedAt a owl:DatatypeProperty ;
+    rdfs:label "assessed at"@en ;
+    rdfs:domain aci:Assessment ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    skos:definition "The date-time at which the assessment was made or recorded."@en ;
+    skos:prefLabel "assessed at"@en ;
+    skos:scopeNote "Datatype labels, timezone presence, and date ordering are checked in the companion SHACL profile. No OWL datatype range is imposed."@en ;
+    aci:modelingBasis "Draft temporal qualification."@en .
+
+aci:assessedBy a owl:ObjectProperty ;
+    rdfs:label "assessed by"@en ;
+    rdfs:domain aci:Assessment ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:range prov:Agent ;
+    skos:definition "Identifies the agent responsible for making or recording the assessment."@en ;
+    skos:prefLabel "assessed by"@en ;
+    aci:modelingBasis "Draft relation for operationalizing the paper."@en .
+
+aci:assessedCapital a owl:ObjectProperty ;
+    rdfs:label "assessed capital"@en ;
+    rdfs:domain aci:Assessment ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:range aci:Capital ;
+    skos:definition "Identifies a capital resource addressed by an access or influence assessment."@en ;
+    skos:prefLabel "assessed capital"@en ;
+    aci:modelingBasis "Draft relation for operationalizing the paper."@en .
+
+aci:basedOnEvidence a owl:ObjectProperty ;
+    rdfs:label "based on evidence"@en ;
+    rdfs:domain aci:Assessment ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:range aci:Evidence_Record ;
+    rdfs:subPropertyOf prov:wasDerivedFrom ;
+    skos:definition "Links an assessment to the source record from which it was derived."@en ;
+    skos:prefLabel "based on evidence"@en ;
+    skos:scopeNote "A source link records provenance; it is not a truth guarantee or a confidence score."@en ;
+    aci:modelingBasis "Draft relation for operationalizing the paper."@en .
+
+aci:describesExercise a owl:ObjectProperty ;
+    rdfs:label "describes exercise"@en ;
+    rdfs:domain aci:Influence_Assessment ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:range aci:Agency_Exercise ;
+    skos:definition "Optionally links an influence assessment to a particular recorded agency exercise."@en ;
+    skos:prefLabel "describes exercise"@en ;
+    aci:modelingBasis "Draft relation for operationalizing the paper."@en .
+
+aci:exercisesAgency a owl:ObjectProperty ;
+    rdfs:label "exercises agency"@en ;
+    rdfs:domain aci:Agency_Exercise ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:range aci:Agency ;
+    skos:definition "Relates an activity to a capacity it exercises, without asserting success."@en ;
+    skos:prefLabel "exercises agency"@en ;
+    aci:modelingBasis "Draft relation for operationalizing the paper."@en .
+
+aci:hasAccessStatus a owl:ObjectProperty ;
+    rdfs:label "has access status"@en ;
+    rdfs:domain aci:Capital_Access_Assessment ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:range aci:Access_Status ;
+    skos:definition "Identifies the assessed availability of a capital resource to an actor."@en ;
+    skos:prefLabel "has access status"@en ;
+    aci:modelingBasis "Draft relation for operationalizing the paper."@en .
+
+aci:hasAgency a owl:ObjectProperty ;
+    rdfs:label "has agency"@en ;
+    rdfs:domain aci:Actor ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:range aci:Agency ;
+    rdfs:subPropertyOf sulo:hasFeature ;
+    owl:inverseOf aci:agencyOf ;
+    skos:definition "Relates an actor to an agency capacity attributed to that actor."@en ;
+    skos:prefLabel "has agency"@en ;
+    aci:modelingBasis "Draft relation for operationalizing the paper."@en .
+
+aci:hasAssessmentStatus a owl:ObjectProperty ;
+    rdfs:label "has assessment status"@en ;
+    rdfs:domain aci:Assessment ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:range aci:Assessment_Status ;
+    skos:definition "Marks a claim as reported, directly observed, hypothesized, or illustrative."@en ;
+    skos:prefLabel "has assessment status"@en ;
+    aci:modelingBasis "Draft relation for operationalizing the paper."@en .
+
+aci:hasCapitalBasis a owl:ObjectProperty ;
+    rdfs:label "has capital basis"@en ;
+    rdfs:domain aci:Agency ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:range aci:Capital ;
+    skos:definition "Identifies a resource relevant to an attributed agency capacity; no automatic causal conclusion follows."@en ;
+    skos:prefLabel "has capital basis"@en ;
+    aci:modelingBasis "Draft relation for operationalizing the paper."@en .
+
+aci:hasDirection a owl:ObjectProperty ;
+    rdfs:label "has direction"@en ;
+    rdfs:domain aci:Influence_Assessment ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:range aci:Influence_Direction ;
+    skos:definition "Identifies the assessed direction relative to the governance objective."@en ;
+    skos:prefLabel "has direction"@en ;
+    aci:modelingBasis "Draft relation for operationalizing the paper."@en .
+
+aci:hasNaturalCapitalContext a owl:ObjectProperty ;
+    rdfs:label "has natural capital context"@en ;
+    rdfs:domain aci:Study_Context ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:range aci:Natural_Capital ;
+    skos:definition "Relates a study context to an ecosystem or natural resource that frames it."@en ;
+    skos:prefLabel "has natural capital context"@en ;
+    aci:modelingBasis "Draft relation for operationalizing the paper."@en .
+
+aci:inContextOf a owl:ObjectProperty ;
+    rdfs:label "in context of"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:range aci:Study_Context ;
+    skos:definition "Identifies the study context of a capacity, activity, or assessment."@en ;
+    skos:prefLabel "in context of"@en ;
+    aci:modelingBasis "Draft relation for operationalizing the paper."@en .
+
+aci:influenceTarget a owl:ObjectProperty ;
+    rdfs:label "influence target"@en ;
+    rdfs:domain aci:Influence_Assessment ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf ( aci:Actor aci:Governance_Process aci:Governance_Step ) ] ;
+    skos:definition "Identifies the actor, occurring governance process, or planned step toward which influence is assessed."@en ;
+    skos:prefLabel "influence target"@en ;
+    aci:modelingBasis "Draft relation for operationalizing the paper."@en .
+
+aci:modelingBasis a owl:AnnotationProperty ;
+    rdfs:label "modeling basis"@en ;
+    skos:definition "Identifies a paper-derived concept or an engineering choice made in this draft."@en .
+
+aci:partOfIntervention a owl:ObjectProperty ;
+    rdfs:label "part of intervention"@en ;
+    rdfs:domain aci:Governance_Process ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:range aci:Sustainability_Intervention ;
+    rdfs:subPropertyOf sulo:isPartOf ;
+    skos:definition "Links an occurring governance process to the intervention of which it is a temporal part."@en ;
+    skos:prefLabel "part of intervention"@en ;
+    aci:modelingBasis "Draft relation for operationalizing the paper."@en .
+
+aci:performedBy a owl:ObjectProperty ;
+    rdfs:label "performed by"@en ;
+    rdfs:domain aci:Agency_Exercise ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:range aci:Actor ;
+    rdfs:subPropertyOf prov:wasAssociatedWith ;
+    skos:definition "Identifies an actor responsible for an agency exercise."@en ;
+    skos:prefLabel "performed by"@en ;
+    aci:modelingBasis "Draft relation for operationalizing the paper."@en .
+
+aci:perspectiveOf a owl:ObjectProperty ;
+    rdfs:label "perspective of"@en ;
+    rdfs:domain aci:Assessment ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:range aci:Actor ;
+    skos:definition "Identifies an actor whose viewpoint is represented, when distinct from or additional to the analyst’s authorship."@en ;
+    skos:prefLabel "perspective of"@en ;
+    aci:modelingBasis "Draft relation for operationalizing the paper."@en .
+
+aci:relevantCapitalType a owl:AnnotationProperty ;
+    rdfs:label "relevant capital type"@en ;
+    skos:definition "Documentation link from an agency form to a capital class. This annotation imposes no necessary or sufficient condition."@en .
+
+aci:withholdsCapital a owl:ObjectProperty ;
+    rdfs:label "withholds capital"@en ;
+    rdfs:domain aci:Agency_Exercise ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:range aci:Capital ;
+    skos:definition "Identifies a resource intentionally withheld in an agency exercise."@en ;
+    skos:prefLabel "withholds capital"@en ;
+    skos:scopeNote "Not a subproperty of prov:used: withholding does not assert that the resource was used. It does not assert ownership."@en ;
+    aci:modelingBasis "Draft relation for operationalizing the paper."@en .
+
+aci:Allocating_Human_Resources a owl:NamedIndividual,
+        aci:Agency_Form ;
+    rdfs:label "Allocating human resources"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    skos:definition "The agency form characterized as allocating human resources."@en ;
+    skos:prefLabel "Allocating human resources"@en ;
+    aci:modelingBasis "Paper: Table 1 and pp. 5–6."@en ;
+    aci:relevantCapitalType aci:Human_Capital .
+
+aci:Available a owl:NamedIndividual,
+        aci:Access_Status ;
+    rdfs:label "Available"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    skos:definition "Assessed as accessible to the actor in the stated context and period."@en ;
+    skos:prefLabel "Available"@en ;
+    aci:modelingBasis "Draft controlled vocabulary; enabling/constraining reflect the paper’s positive/negative distinction."@en .
+
+aci:Capital_Access_Assessment a owl:Class ;
+    rdfs:label "Capital access assessment"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf aci:Assessment ;
+    skos:definition "An assessment of an actor’s ability to access a specified capital resource within a context and period."@en ;
+    skos:prefLabel "Capital access assessment"@en ;
+    skos:scopeNote "Access does not entail ownership, willingness, use, or effective influence. A missing record does not mean capital is unavailable. Record unavailability explicitly."@en ;
+    aci:modelingBasis "Paper: access, allocation, withholding, and gaps, pp. 3 and 5–7; qualified-record structure is a draft extension."@en .
+
+aci:Collective_Actor a owl:Class ;
+    rdfs:label "Collective actor"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf aci:Actor ;
+    skos:definition "A collective capable of acting in the study context, including an informal community or coalition."@en ;
+    skos:prefLabel "Collective actor"@en ;
+    skos:scopeNote "Organizational actors are one kind of collective actor; no exhaustive classification is asserted."@en ;
+    aci:modelingBasis "Draft modeling choice."@en .
+
+aci:Constraining a owl:NamedIndividual,
+        aci:Influence_Direction ;
+    rdfs:label "Constraining"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    skos:definition "Assessed as delaying, blocking, or redirecting the specified process or objective away from its intended course."@en ;
+    skos:prefLabel "Constraining"@en ;
+    aci:modelingBasis "Draft controlled vocabulary; enabling/constraining reflect the paper’s positive/negative distinction."@en .
+
+aci:Cultural_Capital a owl:Class ;
+    rdfs:label "Cultural capital"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf aci:Capital ;
+    skos:definition "Culturally situated knowledge, meanings, values, traditions, and practices that shape perception and action."@en ;
+    skos:prefLabel "Cultural capital"@en ;
+    aci:modelingBasis "Paper: Figure 1, p. 3; paraphrased definition."@en .
+
+aci:Enabling a owl:NamedIndividual,
+        aci:Influence_Direction ;
+    rdfs:label "Enabling"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    skos:definition "Assessed as advancing or supporting the specified process or objective."@en ;
+    skos:prefLabel "Enabling"@en ;
+    aci:modelingBasis "Draft controlled vocabulary; enabling/constraining reflect the paper’s positive/negative distinction."@en .
+
+aci:Enacting_Political_Relevance a owl:NamedIndividual,
+        aci:Agency_Form ;
+    rdfs:label "Enacting political relevance"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    skos:definition "The agency form characterized as enacting political relevance."@en ;
+    skos:prefLabel "Enacting political relevance"@en ;
+    skos:scopeNote "The paper also uses “enacting political influence” in Table 1."@en ;
+    aci:modelingBasis "Paper: Table 1 and pp. 5–6."@en ;
+    aci:relevantCapitalType aci:Political_Capital .
+
+aci:Evidence_Record a owl:Class ;
+    rdfs:label "Evidence record"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf prov:Entity,
+        sulo:InformationObject ;
+    skos:definition "An information object used as a source for an assessment, such as an interview record, observation log, or document."@en ;
+    skos:prefLabel "Evidence record"@en ;
+    aci:modelingBasis "Draft modeling choice."@en .
+
+aci:Financial_Capital a owl:Class ;
+    rdfs:label "Financial capital"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf aci:Capital ;
+    skos:definition "Financial resources available or potentially accessible for activities, including funding and credit."@en ;
+    skos:prefLabel "Financial capital"@en ;
+    aci:modelingBasis "Paper: Figure 1, p. 3; paraphrased definition."@en .
+
+aci:Governance_Step a owl:Class ;
+    rdfs:label "Governance step"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf pplan:Step,
+        sulo:InformationObject ;
+    skos:definition "A plan-level specification of a governance activity."@en ;
+    skos:prefLabel "Governance step"@en ;
+    skos:scopeNote "A plan description, not an occurring process. Use p-plan:isPreceededBy for step ordering, retaining the spelling of the imported property. Do not use sulo:precedes on steps; its domain and range are processes."@en ;
+    aci:modelingBasis "Draft modeling choice."@en .
+
+aci:Human_Capital a owl:Class ;
+    rdfs:label "Human capital"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf aci:Capital ;
+    skos:definition "Knowledge, skills, experience, and capacities relevant to using resources and carrying out activities."@en ;
+    skos:prefLabel "Human capital"@en ;
+    aci:modelingBasis "Paper: Figure 1, p. 3; paraphrased definition."@en .
+
+aci:Hypothesized a owl:NamedIndividual,
+        aci:Assessment_Status ;
+    rdfs:label "Hypothesized"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    skos:definition "A proposition awaiting empirical examination."@en ;
+    skos:prefLabel "Hypothesized"@en ;
+    aci:modelingBasis "Draft controlled vocabulary; enabling/constraining reflect the paper’s positive/negative distinction."@en .
+
+aci:Illustrative a owl:NamedIndividual,
+        aci:Assessment_Status ;
+    rdfs:label "Illustrative"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    skos:definition "Constructed for demonstration and not an empirical finding."@en ;
+    skos:prefLabel "Illustrative"@en ;
+    aci:modelingBasis "Draft controlled vocabulary; enabling/constraining reflect the paper’s positive/negative distinction."@en .
+
+aci:Influencing_Financial_Flows a owl:NamedIndividual,
+        aci:Agency_Form ;
+    rdfs:label "Influencing financial flows"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    skos:definition "The agency form characterized as influencing financial flows."@en ;
+    skos:prefLabel "Influencing financial flows"@en ;
+    aci:modelingBasis "Paper: Table 1 and pp. 5–6."@en ;
+    aci:relevantCapitalType aci:Financial_Capital .
+
+aci:Mixed a owl:NamedIndividual,
+        aci:Influence_Direction ;
+    rdfs:label "Mixed"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    skos:definition "Assessed as having both enabling and constraining aspects in the stated scope."@en ;
+    skos:prefLabel "Mixed"@en ;
+    aci:modelingBasis "Draft controlled vocabulary; enabling/constraining reflect the paper’s positive/negative distinction."@en .
+
+aci:Observed a owl:NamedIndividual,
+        aci:Assessment_Status ;
+    rdfs:label "Observed"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    skos:definition "Recorded as directly observed using the identified evidence and method; not a claim of causal identification."@en ;
+    skos:prefLabel "Observed"@en ;
+    aci:modelingBasis "Draft controlled vocabulary; enabling/constraining reflect the paper’s positive/negative distinction."@en .
+
+aci:Physical_Capital a owl:Class ;
+    rdfs:label "Physical capital"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf aci:Capital ;
+    skos:definition "Human-made material assets such as infrastructure, equipment, and machinery."@en ;
+    skos:prefLabel "Physical capital"@en ;
+    aci:modelingBasis "Paper: Figure 1, p. 3; paraphrased definition."@en .
+
+aci:Political_Capital a owl:Class ;
+    rdfs:label "Political capital"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf aci:Capital ;
+    skos:definition "Resources and capacities supporting participation in, or authority over, decision-making."@en ;
+    skos:prefLabel "Political capital"@en ;
+    aci:modelingBasis "Paper: Figure 1, p. 3; paraphrased definition."@en .
+
+aci:Providing_Physical_Goods_And_Assets a owl:NamedIndividual,
+        aci:Agency_Form ;
+    rdfs:label "Providing physical goods and assets"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    skos:definition "The agency form characterized as providing physical goods and assets."@en ;
+    skos:prefLabel "Providing physical goods and assets"@en ;
+    aci:modelingBasis "Paper: Table 1 and pp. 5–6."@en ;
+    aci:relevantCapitalType aci:Physical_Capital .
+
+aci:Reported a owl:NamedIndividual,
+        aci:Assessment_Status ;
+    rdfs:label "Reported"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    skos:definition "Recorded from a source’s account; not marked as directly observed by the assessor."@en ;
+    skos:prefLabel "Reported"@en ;
+    aci:modelingBasis "Draft controlled vocabulary; enabling/constraining reflect the paper’s positive/negative distinction."@en .
+
+aci:Restricted a owl:NamedIndividual,
+        aci:Access_Status ;
+    rdfs:label "Restricted"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    skos:definition "Assessed as accessible only subject to a relevant limitation."@en ;
+    skos:prefLabel "Restricted"@en ;
+    aci:modelingBasis "Draft controlled vocabulary; enabling/constraining reflect the paper’s positive/negative distinction."@en .
+
+aci:Social_Capital a owl:Class ;
+    rdfs:label "Social capital"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf aci:Capital ;
+    skos:definition "Social resources arising from relationships, networks, shared norms, and trust."@en ;
+    skos:prefLabel "Social capital"@en ;
+    aci:modelingBasis "Paper: Figure 1, p. 3; paraphrased definition."@en .
+
+aci:Steering_Social_Ecological_Discourse a owl:NamedIndividual,
+        aci:Agency_Form ;
+    rdfs:label "Steering social-ecological discourse"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    skos:definition "The agency form characterized as steering social-ecological discourse."@en ;
+    skos:prefLabel "Steering social-ecological discourse"@en ;
+    skos:scopeNote "Natural capital provides framing conditions; social and cultural capitals support discourse. The three annotations are not a requirement that every case explicitly uses all three."@en ;
+    aci:modelingBasis "Paper: Table 1 and pp. 5–6."@en ;
+    aci:relevantCapitalType aci:Cultural_Capital,
+        aci:Natural_Capital,
+        aci:Social_Capital .
+
+aci:Sustainability_Intervention a owl:Class ;
+    rdfs:label "Sustainability intervention"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf prov:Activity ;
+    skos:definition "An implemented course of targeted action intended to address a sustainability challenge."@en ;
+    skos:prefLabel "Sustainability intervention"@en ;
+    skos:scopeNote "Intention to address sustainability does not entail a successful or beneficial outcome. Planned interventions are represented by Sustainability_Intervention_Plan."@en ;
+    aci:modelingBasis "Paper: interventions, p. 1; activity-level specialization in this draft."@en .
+
+aci:Unavailable a owl:NamedIndividual,
+        aci:Access_Status ;
+    rdfs:label "Unavailable"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    skos:definition "Explicitly assessed as inaccessible in the stated scope."@en ;
+    skos:prefLabel "Unavailable"@en ;
+    aci:modelingBasis "Draft controlled vocabulary; enabling/constraining reflect the paper’s positive/negative distinction."@en .
+
+aci:Undetermined a owl:NamedIndividual,
+        aci:Influence_Direction ;
+    rdfs:label "Undetermined"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    skos:definition "Direction has not been established by the assessment."@en ;
+    skos:prefLabel "Undetermined"@en ;
+    aci:modelingBasis "Draft controlled vocabulary; enabling/constraining reflect the paper’s positive/negative distinction."@en .
+
+aci:Unknown_Access a owl:NamedIndividual,
+        aci:Access_Status ;
+    rdfs:label "Unknown access"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    skos:definition "An assessment records that access has not been established."@en ;
+    skos:prefLabel "Unknown access"@en ;
+    aci:modelingBasis "Draft controlled vocabulary; enabling/constraining reflect the paper’s positive/negative distinction."@en .
+
+aci:agencyOf a owl:ObjectProperty ;
+    rdfs:label "agency of"@en ;
+    rdfs:domain aci:Agency ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:range aci:Actor ;
+    rdfs:subPropertyOf sulo:isFeatureOf ;
+    skos:definition "Relates an agency capacity to its bearer."@en ;
+    skos:prefLabel "agency of"@en ;
+    aci:modelingBasis "Draft relation for operationalizing the paper."@en .
+
+aci:Governance_Process a owl:Class ;
+    rdfs:label "Governance process"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf prov:Activity ;
+    skos:definition "An occurring activity through which governance decisions, coordination, participation, or implementation are carried out."@en ;
+    skos:prefLabel "Governance process"@en ;
+    skos:scopeNote "Use Governance_Step for the plan-level specification. A Governance_Process can also be an Agency_Exercise when appropriate."@en ;
+    aci:modelingBasis "Paper: actor-process relations, pp. 3–4."@en .
+
+aci:Natural_Capital a owl:Class ;
+    rdfs:label "Natural capital"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf aci:Capital ;
+    skos:definition "Natural resources, ecological stocks, and associated ecosystem functions considered in a social-ecological context."@en ;
+    skos:prefLabel "Natural capital"@en ;
+    skos:scopeNote "The paper treats natural capital as a framing condition for social-ecological discourse (p. 6). Its presence here does not imply ownership, discretionary allocation, or that an actor produces an ecosystem."@en ;
+    aci:modelingBasis "Paper: Figure 1, p. 3; paraphrased definition."@en .
+
+aci:Study_Context a owl:Class ;
+    rdfs:label "Study context"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf prov:Entity,
+        sulo:InformationObject ;
+    skos:definition "An information object identifying the intervention, setting, and scope within which capacities and assessments are considered."@en ;
+    skos:prefLabel "Study context"@en ;
+    skos:scopeNote "A context description is distinct from the actual ecosystem or activity it describes. Use sulo:refersTo for those links."@en ;
+    aci:modelingBasis "Draft modeling choice."@en .
+
+aci:Influence_Assessment a owl:Class ;
+    rdfs:label "Influence assessment"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf aci:Assessment ;
+    skos:definition "An assessment linking an actor to an actor, governance process, or planned governance step, with an agency form and direction relative to the stated governance objective."@en ;
+    skos:prefLabel "Influence assessment"@en ;
+    skos:scopeNote "No transitivity or polarity-composition rule is defined. Different sources may report different directions without an OWL inconsistency. “Enabling” and “constraining” concern the process/objective, not the moral character of the actor."@en ;
+    aci:modelingBasis "Paper: actor networks and actor-process relations, Figures 2–3 and pp. 4–7; qualification and plan targets are draft extensions."@en .
+
+aci:Access_Status a owl:Class ;
+    rdfs:label "Access status"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf sulo:InformationObject ;
+    skos:definition "A qualitative characterization of capital access in an assessment."@en ;
+    skos:prefLabel "Access status"@en ;
+    skos:scopeNote "Controlled vocabulary for this draft; not an ordinal or numerical scale."@en ;
+    aci:modelingBasis "Draft modeling choice."@en .
+
+aci:Assessment_Status a owl:Class ;
+    rdfs:label "Assessment status"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf sulo:InformationObject ;
+    skos:definition "The evidential or illustrative status assigned to an assessment."@en ;
+    skos:prefLabel "Assessment status"@en ;
+    skos:scopeNote "Controlled vocabulary for this draft; not an ordinal or numerical scale."@en ;
+    aci:modelingBasis "Draft modeling choice."@en .
+
+aci:Influence_Direction a owl:Class ;
+    rdfs:label "Influence direction"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf sulo:InformationObject ;
+    skos:definition "A qualitative characterization of influence relative to a stated governance process or objective."@en ;
+    skos:prefLabel "Influence direction"@en ;
+    skos:scopeNote "Controlled vocabulary for this draft; not an ordinal or numerical scale."@en ;
+    aci:modelingBasis "Draft modeling choice."@en .
+
+aci:hasAgencyForm a owl:ObjectProperty ;
+    rdfs:label "has agency form"@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( aci:Agency aci:Agency_Exercise aci:Influence_Assessment ) ] ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:range aci:Agency_Form ;
+    skos:definition "Classifies a capacity, exercise, or influence assessment by a form of agency."@en ;
+    skos:prefLabel "has agency form"@en ;
+    aci:modelingBasis "Draft relation for operationalizing the paper."@en .
+
+aci:Agency_Exercise a owl:Class ;
+    rdfs:label "Agency exercise"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf prov:Activity ;
+    skos:definition "An activity in which an actor applies or withholds resources or otherwise exercises an agency capacity."@en ;
+    skos:prefLabel "Agency exercise"@en ;
+    skos:scopeNote "This denotes an occurrence, including an attempt that may fail. It is not automatically a p-plan:Activity: a correspondsToStep link supplies that classification when a plan is involved."@en ;
+    aci:modelingBasis "Draft modeling choice."@en .
+
+aci:Agency_Form a owl:Class ;
+    rdfs:label "Agency form"@en ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf sulo:InformationObject ;
+    skos:definition "A category used to describe a capacity, its exercise, or a reported influence mechanism."@en ;
+    skos:prefLabel "Agency form"@en ;
+    skos:scopeNote "The five controlled individuals below represent the paper’s five forms. Corresponding capability subclasses are defined by hasAgencyForm values. The forms are not exclusive."@en ;
+    aci:modelingBasis "Draft modeling choice."@en .
+
+aci:Actor a owl:Class ;
+    rdfs:label "Actor"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf prov:Agent,
+        sulo:Object ;
+    skos:definition "A person or organized or informal collective considered as an agent in a social-ecological governance setting."@en ;
+    skos:prefLabel "Actor"@en ;
+    skos:scopeNote "Narrower than prov:Agent. Software agents are not automatically included. Actors are not classified as sulo:Collection, which is an information object in this foundation."@en ;
+    aci:modelingBasis "Paper: actor scope, pp. 1–2 and 5."@en .
+
+aci:Assessment a owl:Class ;
+    rdfs:label "Assessment"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf prov:Entity,
+        sulo:InformationObject ;
+    skos:definition "A source-qualified record of an analyst’s or participant’s judgment in a specified study context."@en ;
+    skos:prefLabel "Assessment"@en ;
+    skos:scopeNote "An assessment records a claim. It does not automatically assert an unqualified influence relationship or establish causation. Dates apply to the assessed situation; assessedAt records when the judgment was made."@en ;
+    aci:modelingBasis "Paper: interviews, differing perspectives and subjective assessments, pp. 6–7 and 10; record structure is a draft extension."@en .
+
+aci:Capital a owl:Class ;
+    rdfs:label "Capital"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf sulo:Object ;
+    skos:definition "A resource, asset, capability, or other relatively enduring aspect considered for its contribution to a social-ecological system or intervention."@en ;
+    skos:prefLabel "Capital"@en ;
+    skos:scopeNote "This deliberately broad superclass accommodates physical resources and intangible features. Capital types are not mutually disjoint. Neither ownership nor access nor successful influence follows from this classification. Use context-specific resource/aspect individuals where the capital classification depends on context."@en ;
+    aci:modelingBasis "Paper: capital concept, pp. 2–3 and Figure 1."@en .
+
+aci:Agency a owl:Class ;
+    rdfs:label "Agency"@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    rdfs:isDefinedBy <https://www.michaeldebellis.com/agents_capitals_influence> ;
+    rdfs:subClassOf sulo:Capability ;
+    skos:definition "An actor’s context-dependent capacity to affect governance processes through the application, allocation, or control of relevant capitals."@en ;
+    skos:prefLabel "Agency"@en ;
+    skos:scopeNote "A capacity, distinct from an exercise of that capacity and from a judgment that the exercise was effective. No rule infers agency or success merely from capital availability."@en ;
+    aci:modelingBasis "Paper: definition of agency, p. 3."@en .
+
+<https://www.michaeldebellis.com/agents_capitals_influence> a owl:Ontology ;
+    rdfs:label "Agents, Capitals, and Influence — first draft"@en ;
+    dcterms:created "2026-10-08"^^xsd:date ;
+    dcterms:description "A provisional domain module based on Rölfer et al. (2025), Networks of influence. Imports the supplied Bro_Pro snapshot, which contains SULO, a PROV subset, and P-Plan. Separates capital resources and access assessments, agency capacities and their exercises, and source-qualified influence assessments. It contains no empirical instance data or predictive rules."@en ;
+    dcterms:source <https://doi.org/10.1016/j.oneear.2025.101495> ;
+    owl:imports <https://www.michaeldebellis.com/bro_pro> ;
+    owl:versionIRI aci:1.0.0-draft ;
+    owl:versionInfo "1.0.0-draft" ;
+    skos:editorialNote "Proposed namespace, not a published endpoint. Local XML catalog mappings resolve imports. New domain terms are provisional; the imported Bro_Pro file is unchanged. The companion example is entirely fictional."@en .
+
+[] a owl:AllDifferent ;
+    owl:distinctMembers ( aci:Reported aci:Observed aci:Hypothesized aci:Illustrative ) .
+
+[] a owl:AllDifferent ;
+    owl:distinctMembers ( aci:Enabling aci:Constraining aci:Mixed aci:Undetermined ) .
+
+[] a owl:AllDifferent ;
+    owl:distinctMembers ( aci:Available aci:Restricted aci:Unavailable aci:Unknown_Access ) .
+
