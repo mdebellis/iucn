@@ -1,6 +1,6 @@
 # Agents, Capitals, and Influence — First Draft
 
-*8 October 2026 for Michael DeBellis*
+*8 October 2026*
 
 ## Purpose
 
